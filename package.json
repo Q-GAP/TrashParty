@@ -1,0 +1,23 @@
+{
+  "name": "trashparty",
+  "version": "1.0.0",
+  "description": "NFT-style Webapp  for (entertainment purposes): A website where once a day you open a pack of random stuff (data we collect from different API's). In the packs could be anywhere from songs to movies to pokemon cards, really any type of data we can get from an API and have time to implement. You can trade your \"trash\" with other users till you get items you actually like.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Q-GAP/TrashParty.git"
+  },
+  "author": "Q-GAP",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/Q-GAP/TrashParty/issues"
+  },
+  "homepage": "https://github.com/Q-GAP/TrashParty#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.12",
+    "writemereadme": "^1.5.0"
+  }
+}
