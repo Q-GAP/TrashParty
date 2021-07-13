@@ -1,11 +1,11 @@
 # dev/
-dev/
+dev
 
 # node_modules
-node_modules/
+node_modules
 
 # .VSCode
-.vscode/
+.vscode
 
 # seeds
-seeds/
+seeds
