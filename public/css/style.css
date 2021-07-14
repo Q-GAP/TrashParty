@@ -1,4 +1,37 @@
+:root {
+    --trashy: #0c68004d
+}
+
 body {
     width: 100%;
     height: auto;
+}
+
+.lfPic {
+    background-image: url('../images/TrashPartyBanner.png');
+    /* position: absolute; */
+}
+
+nav {
+    background-color: var(--trashy);
+    position: relative;
+    padding: 0 2vw;
+}
+
+#Trashy {
+    position: absolute;
+    height: 64px;
+    transform: translateX(-50%);
+    width: auto;
+    left: 50%;
+}
+
+@media only screen and (max-width:1000px) {
+    /* #Trashy {
+        left: 0;
+        transform: unset;
+    } */
+    .brand-logo {
+        display: none !important;
+    }
 }
