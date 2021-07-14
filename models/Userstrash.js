@@ -22,4 +22,5 @@ Userstrash.init({
     modelName: 'userstrash',
 })
 
+
 module.exports = Userstrash;
