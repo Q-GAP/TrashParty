@@ -6,38 +6,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TrashParty</title>
+    <!-- jquery cdn -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <!-- fontawesome cdn -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Google fonts cdn -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="../../public/css/materialize.min.css">
     <link rel="stylesheet" href="../../public/css/style.css">
 </head>
 
 <body>
+    <!-- #region Header -->
     <section class="lfPic">
-
-        <!-- COMMENT BACK IN WHEN CHANGED TO HANDLEBARS -->
         <header>
             <nav>
                 <div class="nav-wrapper">
-                    <a href="#" class="brand-logo">Trash Party</a>
+                    <a href="#!" class="brand-logo">Trash Party</a>
                     <a href="#"><img class="center" id="Trashy" src="../../public/images/Trashy.png">
                     </a>
-                    <ul id="nav-mobile" class="right">
+                    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
                         <!-- {{#if loggedIn}} -->
                         <li><a href="/landfill/">Landfill</a></li>
                         <li><a href="/collection/">Collection</a></li>
-                        <li><a href="/logout/">Logout</a></li>
-                        <!-- {{else}} 
+                        <!-- <li><a href="/logout/">Logout</a></li> -->
+                        <!-- {{else}} -->
                         <li><a href="/login/">Login</a></li>
                         <li><a href="/signup/">Sign Up</a></li>
-                        {{/if}} -->
+                        <!--{{/if}} -->
                     </ul>
                 </div>
             </nav>
+            <ul class="sidenav" id="mobile-demo">
+                <!-- {{#if loggedIn}} -->
+                <li><a href="/landfill/">Landfill</a></li>
+                <li><a href="/collection/">Collection</a></li>
+                <!-- <li><a href="/logout/">Logout</a></li> -->
+                <!-- {{else}} -->
+                <li><a href="/login/">Login</a></li>
+                <li><a href="/signup/">Sign Up</a></li>
+                <!-- {{/if}} -->
+            </ul>
         </header>
     </section>
+    <!-- #endregion -->
     <main>
         <!-- {{#if body}} -->
         <!-- {{{body}}} -->
@@ -46,6 +60,13 @@
     <footer>
 
     </footer>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- TODO: UNCOMMENT WHEN HANDLEBARS IS IMPLEMENTED -->
+    <!-- <script src="/js/index.js"></script> -->
+    <script src="../../public/js/index.js"></script>
 </body>
 
 </html>

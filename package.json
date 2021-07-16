@@ -20,5 +20,8 @@
     "devDependencies": {
         "nodemon": "^2.0.12",
         "writemereadme": "^1.5.0"
+    },
+    "dependencies": {
+        "materialize-css": "^1.0.0-rc.2"
     }
 }
