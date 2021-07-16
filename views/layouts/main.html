@@ -23,7 +23,7 @@
         <header>
             <nav>
                 <div class="nav-wrapper">
-                    <a href="#!" class="brand-logo">Trash Party</a>
+                    <a href="#!" class="brand brand-logo">Trash<span class="twoTone">Party</span></a>
                     <a href="#"><img class="center" id="Trashy" src="../../public/images/Trashy.png">
                     </a>
                     <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
@@ -53,44 +53,50 @@
     </section>
     <!-- #endregion -->
     <main>
-        <!-- {{#if body}} -->
-        <!-- {{{body}}} -->
-        <!-- {{/if}} -->
+        <div class="window testBG1">
+            <!-- {{#if body}} -->
+            <!-- {{{body}}} -->
+            <!-- {{/if}} -->
+        </div>
     </main>
-    <footer class="center sticky">
-        <div class="footer--trashroutes">
-            <p>
-                <a href="/">Homepage</a>
-                <!-- TODO: UNCOMMENT FOR HBS {{#if loggedIn}} | -->
-                <a href="/dashboard/">Dashboard</a>
-                <!-- TODO: UNCOMMENT FOR HBS {{else}} | <a href="/login/">Login</a> | <a href="/signup/">SignUp</a> -->
-                <!-- TODO: UNCOMMENT FOR HBS {{/if}} -->
-            </p>
-        </div>
-        <div class="footer--links">
-            <p>
-                <strong>Trash<span>Party</span></strong> by <a href="https://github.com/Q-GAP/">Q-GAP</a> | Check Out the Code:
-                <a href="https://github.com/Q-GAP/TrashParty"><i class="fab fa-github"></i>Trash Source</a> |
-                <a href="mailto:support@peterroto.com"><i class="far fa-envelope"></i> Email Us</a>
-                <br>
-                <div class="copyright" align="center">
-                    <script>
-                        document.write('&copy;');
-                        document.write(' 2021 - ');
-                        document.write(new Date().getFullYear());
-                        document.write(' QGAP - All Rights Reserved.');
-                    </script>
-                </div>
-            </p>
-        </div>
-    </footer>
-
+    <!-- #region FOOTER -->
+    <section class="lfPic--footer">
+        <footer class="center sticky">
+            <div class="footer--trashroutes">
+                <p>
+                    <a href="/" class="brand">Trash<span class="twoTone">Party</span></a>
+                    <!-- TODO: UNCOMMENT FOR HBS {{#if loggedIn}} | -->
+                    <a href="/dashboard/">Dashboard</a>
+                    <!-- TODO: UNCOMMENT FOR HBS {{else}} | <a href="/login/">Login</a> | <a href="/signup/">SignUp</a> -->
+                    <!-- TODO: UNCOMMENT FOR HBS {{/if}} -->
+                </p>
+            </div>
+            <div class="footer--links">
+                <p class="bottom"> <strong class="brand">Trash<span class="twoTone">Party</span></strong> by <a href="https://github.com/Q-GAP/">Q-GAP</a> | Check Out the Code:
+                    <a href="https://github.com/Q-GAP/TrashParty"><i class="fab fa-github"></i>Trash Source</a> |
+                    <a href="mailto:support@peterroto.com"><i class="far fa-envelope"></i> Email Us</a>
+                    <!-- <br> -->
+                    <div class="copyright" align="center">
+                        <script>
+                            document.write('&copy;');
+                            document.write(' 2021 - ');
+                            document.write(new Date().getFullYear());
+                            document.write(' QGAP - All Rights Reserved.');
+                        </script>
+                    </div>
+                </p>
+            </div>
+        </footer>
+    </section>
+    <!-- endregion -->
+    <!-- #region JS -->
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
     <!-- TODO: UNCOMMENT WHEN HANDLEBARS IS IMPLEMENTED -->
     <!-- <script src="/js/index.js"></script> -->
     <script src="../../public/js/index.js"></script>
+    <!-- endregion -->
 </body>
 
 </html>
