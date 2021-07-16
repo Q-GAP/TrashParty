@@ -1,6 +1,6 @@
-const User = require('./User.js')
-const Trash = require('./Trash.js')
-const UsersTrash = require('./UsersTrash.js')
+const User = require('./User')
+const Trash = require('./Trash')
+const UsersTrash = require('./UsersTrash')
 
 
 
