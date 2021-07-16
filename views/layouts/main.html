@@ -57,8 +57,32 @@
         <!-- {{{body}}} -->
         <!-- {{/if}} -->
     </main>
-    <footer>
-
+    <footer class="center sticky">
+        <div class="footer--trashroutes">
+            <p>
+                <a href="/">Homepage</a>
+                <!-- TODO: UNCOMMENT FOR HBS {{#if loggedIn}} | -->
+                <a href="/dashboard/">Dashboard</a>
+                <!-- TODO: UNCOMMENT FOR HBS {{else}} | <a href="/login/">Login</a> | <a href="/signup/">SignUp</a> -->
+                <!-- TODO: UNCOMMENT FOR HBS {{/if}} -->
+            </p>
+        </div>
+        <div class="footer--links">
+            <p>
+                <strong>Trash<span>Party</span></strong> by <a href="https://github.com/Q-GAP/">Q-GAP</a> | Check Out the Code:
+                <a href="https://github.com/Q-GAP/TrashParty"><i class="fab fa-github"></i>Trash Source</a> |
+                <a href="mailto:support@peterroto.com"><i class="far fa-envelope"></i> Email Us</a>
+                <br>
+                <div class="copyright" align="center">
+                    <script>
+                        document.write('&copy;');
+                        document.write(' 2021 - ');
+                        document.write(new Date().getFullYear());
+                        document.write(' QGAP - All Rights Reserved.');
+                    </script>
+                </div>
+            </p>
+        </div>
     </footer>
 
     <!-- Compiled and minified JavaScript -->

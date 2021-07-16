@@ -1,10 +1,21 @@
 :root {
-    --trashy: #0c68004d
+    --trashy: #0c68004d;
+    --border-radius: 0.3rem;
+    --largestFont: calc(18px + 0.698vw);
+    --largeFont: calc(14px +0.698vw);
+    --normalFont: calc(12px + 0.698vw);
+    --smallFont: calc(9px + 0.698vw);
+    --tinyFont: calc(6px + 0.698vw);
+    /* The character count on */
+    --lineHeight: calc(var(--fontSize) * 1.4);
+    --letterSpacing: calc(var(--fontSize) * 0.0015);
+    --fontWeight: 300;
 }
 
 body {
     width: 100%;
     height: auto;
+    font-size: var(--normalFont);
 }
 
 .lfPic {
@@ -24,6 +35,10 @@ nav {
     transform: translateX(-50%);
     width: auto;
     left: 50%;
+}
+
+.footer--links {
+    font-size: var(--tinyFont);
 }
 
 @media only screen and (max-width:1000px) {

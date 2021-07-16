@@ -4,6 +4,7 @@
     "description": "NFT-style Webapp  for (entertainment purposes): A website where once a day you open a pack of random stuff (data we collect from different API's). In the packs could be anywhere from songs to movies to pokemon cards, really any type of data we can get from an API and have time to implement. You can trade your \"trash\" with other users till you get items you actually like.",
     "main": "server.js",
     "scripts": {
+        "watch": "nodemon server.js",
         "start": "node server.js",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
@@ -22,6 +23,16 @@
         "writemereadme": "^1.5.0"
     },
     "dependencies": {
-        "materialize-css": "^1.0.0-rc.2"
+        "materialize-css": "^1.0.0-rc.2",
+        "bcrypt": "^5.0.1",
+        "connect-session-sequelize": "^7.1.1",
+        "dotenv": "^10.0.0",
+        "express": "^4.17.1",
+        "express-handlebars": "^5.3.2",
+        "express-session": "^1.17.2",
+        "handlebars": "^4.7.7",
+        "mysql2": "^2.2.5",
+        "sequelize": "^6.6.5"
+
     }
 }
