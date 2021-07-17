@@ -4,12 +4,12 @@ const trashData = [
     {
         name: "Test Trash #1",
         image: "https://giphy.com/embed/3o7527pa7qs9kCG78A",
-        rarity: 5
+        rarity: 3
     },
     {
         name: "Test Trash #2",
         image: "https://giphy.com/embed/4Zo41lhzKt6iZ8xff9",
-        rarity: 4
+        rarity: 1
     },
     {
         name: "Test Trash #3",

@@ -1,10 +1,10 @@
 const router = require('express').Router();
-const { Trash, User } = require('../../models')
+const { Trash, User, UserTrash } = require('../../models')
 
 router.get("/", async(req, res) => {
     try {
         const trashList = await Trash.findAll({
-            include: [{model: User, attributes:["username"]}]
+            include: [{model: UserTrash, include:[{model: User, attributes:['username']}]}]
         })
         res.status(200).json(trashList);
     }
@@ -16,7 +16,7 @@ router.get("/", async(req, res) => {
 router.get("/:id", async(req, res) => {
     try {
         const trash = await Trash.findByPk(req.params.id, {
-            include: [{model: User, attributes:["username"]}]
+            include: [{model: UserTrash, include:[{model: User, attributes:['username']}]}]
         })
         res.status(200).json(trash);
     }

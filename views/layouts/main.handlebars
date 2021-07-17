@@ -44,7 +44,7 @@
                 <li><a href="/landfill/">Landfill</a></li>
                 <li><a href="/collection/">Collection</a></li>
                 <li><a href="/logout/">Logout</a></li>
-                <{{else}}
+                {{else}}
                 <li><a href="/login/">Login</a></li>
                 <li><a href="/signup/">Sign Up</a></li>
                 {{/if}}
@@ -53,10 +53,12 @@
     </section>
     <!-- #endregion -->
     <main>
+
         <div class="window">
             {{#if body}}
             {{{body}}}
             {{/if}}
+
         </div>
     </main>
     <!-- #region FOOTER -->
@@ -64,6 +66,7 @@
         <footer class="center sticky">
             <div class="footer--trashroutes">
                 <p>
+
                     <a href="/" class="brand">Trash<span class="twoTone">Party</span></a>
                     {{#if loggedIn}} |
                     <a href="/dashboard/">Dashboard</a>
@@ -92,6 +95,7 @@
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
  <script src="/js/index.js"></script>
+
     <!-- endregion -->
 </body>
 

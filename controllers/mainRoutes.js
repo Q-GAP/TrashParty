@@ -14,20 +14,23 @@ router.get('/login', (req, res) => {
 // TODO: FINISH ROUTE
 router.get('/', (req, res) => {
 
+
     res.render('splash')
         // if (loggedIn) {
         //     User.findall({
         //         attributes: ['id', 'username', 'lastPackOpened', '']
 
-    //     })
 
+    //     })
 
     // } else
 
     //     User.findall({
     //     attributes: ['id', 'lastOpened', 'username']
     // })
+    res.render('splash');
 
-})
+});
+
 
 module.exports = router

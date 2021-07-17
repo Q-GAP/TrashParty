@@ -6,11 +6,11 @@ const UserTrash = require('./Usertrash')
 
 // Super Many-To-Many Relationship
 
-Trash.belongsToMany(User, {through: UserTrash})
-User.belongsToMany(Trash, {through: UserTrash})
-Trash.hasMany(UserTrash)
-UserTrash.belongsTo(Trash)
+// Trash.belongsToMany(User, {through: UserTrash, unique: false})
+// User.belongsToMany(Trash, {through: UserTrash, unique: false})
 User.hasMany(UserTrash)
 UserTrash.belongsTo(User)
+Trash.hasMany(UserTrash)
+UserTrash.belongsTo(Trash)
 
 module.exports = {User, Trash, UserTrash}
