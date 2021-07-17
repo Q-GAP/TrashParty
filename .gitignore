@@ -7,5 +7,6 @@ node_modules
 # .VSCode
 .vscode
 
+#.env
 .env
 

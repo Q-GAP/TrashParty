@@ -6,9 +6,6 @@ const { userTrash, Trash, User } = require('../models');
 //If the user is logged in, redirect to dashboard. If not render the login page.
 
 router.get('/login', (req, res) => {
-    // if (req.session.loggedIn){
-    //     res.redirect('/dashboard');
-    // }else{
     res.render('login');
     return;
 });
@@ -16,12 +13,15 @@ router.get('/login', (req, res) => {
 
 // TODO: FINISH ROUTE
 router.get('/', (req, res) => {
-    // if (loggedIn) {
-    //     User.findall({
-    //         attributes: ['id', 'username', 'lastPackOpened', '']
+
+
+    res.render('splash')
+        // if (loggedIn) {
+        //     User.findall({
+        //         attributes: ['id', 'username', 'lastPackOpened', '']
+
 
     //     })
-
 
     // } else
 
@@ -31,5 +31,6 @@ router.get('/', (req, res) => {
     res.render('splash');
 
 });
+
 
 module.exports = router
