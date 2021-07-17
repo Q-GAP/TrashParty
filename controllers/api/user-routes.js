@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../../models')
+const { User, UserTrash, Trash } = require('../../models')
 const bcrypt = require('bcrypt');
 
 
@@ -8,16 +8,14 @@ const bcrypt = require('bcrypt');
 router.post('/', async(req, res) => {
     try {
         const dbUserData = await User.create({
-            firstName: req.body.firstName,
-            lastName: req.body.lastName,
             username: req.body.username,
             email: req.body.email,
-            password: req.body.password,
+            password: req.body.password
         });
 
-        // TODO: Set up sessions with the 'loggedIn' variable
         req.session.save(() => {
             req.session.loggedIn = true;
+            req.session.userId = dbUserData.id
             res.status(200).json(dbUserData);
         });
     } catch (err) {
@@ -45,7 +43,7 @@ router.post('/login', async(req, res) => {
             return;
         }
 
-        const comparison = await bcrypt.compare(password, dbUserData[0].password);
+        const comparison = await bcrypt.compare(password, dbUserData.password);
 
         if (!comparison) {
             res
@@ -55,12 +53,12 @@ router.post('/login', async(req, res) => {
         }
 
         req.session.save(() => {
-            // TODO: Once the user successfully logs in, set up sessions with the 'loggedIn' variable
             req.session.loggedIn = true;
+            req.session.userId = dbUserData.id
 
             res
                 .status(200)
-                .json({ user: dbUserData[0].username, message: 'You are now logged in!' });
+                .json({ user: dbUserData.username, message: 'You are now logged in!' });
         });
     } catch (err) {
         console.log(err);
@@ -79,5 +77,18 @@ router.post('/logout', (req, res) => {
         res.status(404).end();
     }
 });
+
+router.get('/:id', async (req, res) => {
+    try {
+        const user = await User.findByPk(req.params.id, {
+            attributes: ["username", "id", "email"],
+            include: [{model: UserTrash, include:[{model: Trash}]}]
+        })
+        res.status(200).json(user)
+    }
+    catch (err) {
+        res.status(400).json(err)
+    }
+})
 
 module.exports = router;
