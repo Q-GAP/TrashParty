@@ -1,4 +1,4 @@
-const { UsersTrash } = require("../models")
+const { UserTrash } = require("../models")
 
 const usersTrashData = [
     {
@@ -33,6 +33,6 @@ const usersTrashData = [
     }
 ]
 
-const seedUsersTrash = () => UsersTrash.bulkCreate(usersTrashData)
+const seedUsersTrash = () => UserTrash.bulkCreate(usersTrashData)
 
 module.exports = seedUsersTrash;
