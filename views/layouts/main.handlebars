@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrashParty</title>
+    <!-- jquery cdn -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <!-- fontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <!-- Google fonts cdn -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../../public/css/materialize.min.css">
+    <link rel="stylesheet" href="../../public/css/style.css">
+</head>
+
+<body>
+    <!-- #region Header -->
+    <section class="lfPic">
+        <header>
+            <nav>
+                <div class="nav-wrapper">
+                    <a href="#!" class="brand brand-logo">Trash<span class="twoTone">Party</span></a>
+                    <a href="#"><img class="center" id="Trashy" src="../../public/images/Trashy.png">
+                    </a>
+                    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <!-- {{#if loggedIn}} -->
+                        <li><a href="/landfill/">Landfill</a></li>
+                        <li><a href="/collection/">Collection</a></li>
+                        <!-- <li><a href="/logout/">Logout</a></li> -->
+                        <!-- {{else}} -->
+                        <li><a href="/login/">Login/Signup</a></li>
+                        <!--{{/if}} -->
+                    </ul>
+                </div>
+            </nav>
+            <ul class="sidenav" id="mobile-demo">
+                <!-- {{#if loggedIn}} -->
+                <li><a href="/landfill/">Landfill</a></li>
+                <li><a href="/collection/">Collection</a></li>
+                <!-- <li><a href="/logout/">Logout</a></li> -->
+                <!-- {{else}} -->
+                <li><a href="/login/">Login</a></li>
+                <li><a href="/signup/">Sign Up</a></li>
+                <!-- {{/if}} -->
+            </ul>
+        </header>
+    </section>
+    <!-- #endregion -->
+    <main>
+        <div class="window testBG1">
+            <!-- {{#if body}} -->
+            <!-- {{{body}}} -->
+            <!-- {{/if}} -->
+        </div>
+    </main>
+    <!-- #region FOOTER -->
+    <section class="lfPic--footer">
+        <footer class="center sticky">
+            <div class="footer--trashroutes">
+                <p>
+                    <a href="/" class="brand">Trash<span class="twoTone">Party</span></a>
+                    <!-- TODO: UNCOMMENT FOR HBS {{#if loggedIn}} | -->
+                    <a href="/dashboard/">Dashboard</a>
+                    <!-- TODO: UNCOMMENT FOR HBS {{else}} | <a href="/login/">Login</a> | <a href="/signup/">SignUp</a> -->
+                    <!-- TODO: UNCOMMENT FOR HBS {{/if}} -->
+                </p>
+            </div>
+            <div class="footer--links">
+                <p class="bottom"> <strong class="brand">Trash<span class="twoTone">Party</span></strong> by <a href="https://github.com/Q-GAP/">Q-GAP</a> | Check Out the Code:
+                    <a href="https://github.com/Q-GAP/TrashParty"><i class="fab fa-github"> Trash Source</i></a> |
+                    <a href="mailto:support@peterroto.com"><i class="far fa-envelope"> Email Us</i></a>
+                    <!-- <br> -->
+                    <div class="copyright" align="center">
+                        <script>
+                            document.write('&copy;');
+                            document.write(' 2021 - ');
+                            document.write(new Date().getFullYear());
+                            document.write(' QGAP - All Rights Reserved.');
+                        </script>
+                    </div>
+                </p>
+            </div>
+        </footer>
+    </section>
+    <!-- endregion -->
+    <!-- #region JS -->
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- TODO: UNCOMMENT WHEN HANDLEBARS IS IMPLEMENTED -->
+    <!-- <script src="/js/index.js"></script> -->
+    <script src="../../public/js/index.js"></script>
+    <!-- endregion -->
+</body>
+
+</html>
