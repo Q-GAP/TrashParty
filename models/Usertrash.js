@@ -1,9 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Userstrash extends Model{}
-
-Userstrash.init({
+const UserTrash = sequelize.define('usertrash', {
     id: {
         type: DataTypes.INTEGER,
         allowNull: false,
@@ -14,13 +12,13 @@ Userstrash.init({
           type: DataTypes.BOOLEAN,
           defaultValue: false
       }
-},
-{
+}, {
     sequelize,
+    timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'userstrash',
+    modelName: 'usertrash',
 })
 
 
-module.exports = Userstrash;
+module.exports = UserTrash;
