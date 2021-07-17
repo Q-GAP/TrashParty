@@ -8,6 +8,12 @@ const UserTrash = sequelize.define('usertrash', {
         primaryKey: true,
         autoIncrement: true,
       },
+    userId: {
+        type: DataTypes.INTEGER
+    },
+    trashId: {
+        type: DataTypes.INTEGER
+    },
       inLandfill: {
           type: DataTypes.BOOLEAN,
           defaultValue: false
