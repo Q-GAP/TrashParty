@@ -28,6 +28,10 @@ const User = sequelize.define('user', {
       len: [6],
     },
   },
+  lastOpened: {
+    type: DataTypes.DATE,
+    allowNull: true
+  }
 }, {
   hooks: {
     async beforeCreate(newUserData) {
