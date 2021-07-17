@@ -1,6 +1,7 @@
 :root {
     --trashy: #0c68004d;
     --trashy-dingy: #0c680071;
+    --ratty: #79b804b7;
     --testBG1: #faab00a1;
     --testBG1: #00e1ff9a;
     --border-radius: 0.3rem;
@@ -78,9 +79,11 @@ nav {
 /* =========== START =========== WINDOW =========== */
 
 .window {
-    display: flex;
+    background-image: url('/images/landfillwallpaper.jpeg');
+    margin: 0 5%;
+    padding: 10vh 10vw;
     width: 90%;
-    height: 100%;
+    height: 100vh;
 }
 
 
@@ -89,8 +92,33 @@ nav {
 
 /* =========== START =========== LOGIN =========== */
 
+hr,
 .btn {
     color: black !important;
+}
+
+img.activator {
+    flex: 0 1 60%;
+    padding: .5rem 2rem 0;
+}
+
+.card-content span,
+.card-content span i {
+    font-size: var(--largestFont) !important;
+    font-weight: bold !important;
+}
+
+.login-signup {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 20%;
+}
+
+.login.card,
+.signup.card {
+    background-color: var(--ratty);
+    flex: 0 0 33%;
 }
 
 
@@ -172,5 +200,12 @@ footer p {
     } */
     .brand-logo {
         display: none !important;
+    }
+}
+
+@media only screen and (max-width:768) {
+    .login.card,
+    .signup.card {
+        flex: 1 0 75%;
     }
 }
