@@ -14,8 +14,8 @@
     <!-- Google fonts cdn -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="../../public/css/materialize.min.css">
-    <link rel="stylesheet" href="../../public/css/style.css">
+    <link rel="stylesheet" href="/css/materialize.min.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
@@ -25,38 +25,38 @@
             <nav>
                 <div class="nav-wrapper">
                     <a href="#!" class="brand brand-logo">Trash<span class="twoTone">Party</span></a>
-                    <a href="#"><img class="center" id="Trashy" src="../../public/images/Trashy.png">
+                    <a href="#"><img class="center" id="Trashy" src="/images/Trashy.png">
                     </a>
                     <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                     <ul id="nav-mobile" class="right hide-on-med-and-down">
-                        <!-- {{#if loggedIn}} -->
+                        {{#if loggedIn}}
                         <li><a href="/landfill/">Landfill</a></li>
                         <li><a href="/collection/">Collection</a></li>
-                        <!-- <li><a href="/logout/">Logout</a></li> -->
-                        <!-- {{else}} -->
+                        <li><a href="/logout/">Logout</a></li>
+                        {{else}}
                         <li><a href="/login/">Login/Signup</a></li>
-                        <!--{{/if}} -->
+                        {{/if}}
                     </ul>
                 </div>
             </nav>
             <ul class="sidenav" id="mobile-demo">
-                <!-- {{#if loggedIn}} -->
+                {{#if loggedIn}}
                 <li><a href="/landfill/">Landfill</a></li>
                 <li><a href="/collection/">Collection</a></li>
-                <!-- <li><a href="/logout/">Logout</a></li> -->
-                <!-- {{else}} -->
+                <li><a href="/logout/">Logout</a></li>
+                <{{else}}
                 <li><a href="/login/">Login</a></li>
                 <li><a href="/signup/">Sign Up</a></li>
-                <!-- {{/if}} -->
+                {{/if}}
             </ul>
         </header>
     </section>
     <!-- #endregion -->
     <main>
-        <div class="window testBG1">
-            <!-- {{#if body}} -->
-            <!-- {{{body}}} -->
-            <!-- {{/if}} -->
+        <div class="window">
+            {{#if body}}
+            {{{body}}}
+            {{/if}}
         </div>
     </main>
     <!-- #region FOOTER -->
@@ -65,17 +65,16 @@
             <div class="footer--trashroutes">
                 <p>
                     <a href="/" class="brand">Trash<span class="twoTone">Party</span></a>
-                    <!-- TODO: UNCOMMENT FOR HBS {{#if loggedIn}} | -->
+                    {{#if loggedIn}} |
                     <a href="/dashboard/">Dashboard</a>
-                    <!-- TODO: UNCOMMENT FOR HBS {{else}} | <a href="/login/">Login</a> | <a href="/signup/">SignUp</a> -->
-                    <!-- TODO: UNCOMMENT FOR HBS {{/if}} -->
+                   {{else}} | <a href="/login/">Login</a> | <a href="/login/">SignUp</a>
+                   {{/if}}
                 </p>
             </div>
             <div class="footer--links">
                 <p class="bottom"> <strong class="brand">Trash<span class="twoTone">Party</span></strong> by <a href="https://github.com/Q-GAP/">Q-GAP</a> | Check Out the Code:
                     <a href="https://github.com/Q-GAP/TrashParty"><i class="fab fa-github"> Trash Source</i></a> |
                     <a href="mailto:support@peterroto.com"><i class="far fa-envelope"> Email Us</i></a>
-                    <!-- <br> -->
                     <div class="copyright" align="center">
                         <script>
                             document.write('&copy;');
@@ -92,10 +91,7 @@
     <!-- #region JS -->
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
-    <!-- TODO: UNCOMMENT WHEN HANDLEBARS IS IMPLEMENTED -->
-    <!-- <script src="/js/index.js"></script> -->
-    <script src="../../public/js/index.js"></script>
+ <script src="/js/index.js"></script>
     <!-- endregion -->
 </body>
 
