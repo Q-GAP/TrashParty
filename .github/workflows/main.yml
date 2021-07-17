@@ -1,0 +1,20 @@
+# This is a basic workflow to help you get started with Actions
+name: Send To Discord
+# Controls when the workflow will run
+on: [push, pull_request]
+jobs:
+  send-to-discord:
+    name: "Send To Discord"
+    runs-on: "ubuntu-latest"
+    steps:
+      - uses: "hugoalh/GitHubAction.SendToDiscord@v3.0.0"
+        with:
+          configuration: ".github/workflows_configuration/send-to-discord.json"
+          webhook_id: "${{secrets.DISCORD_WEBHOOK_ID}}"
+          webhook_token: "${{secrets.DISCORD_WEBHOOK_TOKEN}}"
+          variable_join: "."
+          # variable_list_external:
+          variable_prefix: "%"
+          variable_suffix: "%"
+
+# Triggers the workflow on push or pull request events but only for the main branch
