@@ -11,23 +11,25 @@ router.get('/login', (req, res) => {
     // }else{
     res.render('login');
     return;
-}
 });
 
 
 // TODO: FINISH ROUTE
 router.get('/', (req, res) => {
-    if (loggedIn) {
-        User.findall({
-            attributes: ['id', 'username', 'lastPackOpened', '']
+    // if (loggedIn) {
+    //     User.findall({
+    //         attributes: ['id', 'username', 'lastPackOpened', '']
 
-        })
+    //     })
 
 
-    } else
+    // } else
 
-        User.findall({
-        attributes: ['id', 'lastOpened', 'username']
-    })
+    //     User.findall({
+    //     attributes: ['id', 'lastOpened', 'username']
+    // })
+    res.render('splash');
 
-})
+});
+
+module.exports = router
