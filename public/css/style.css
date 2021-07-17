@@ -1,11 +1,54 @@
 :root {
-    --trashy: #0c68004d
+    --trashy: #0c68004d;
+    --trashy-dingy: #0c680071;
+    --testBG1: #faab00a1;
+    --testBG1: #00e1ff9a;
+    --border-radius: 0.3rem;
+    --largestFont: calc(18px + 0.698vw);
+    --largeFont: calc(14px +0.698vw);
+    --normalFont: calc(12px + 0.698vw);
+    --smallFont: calc(9px + 0.698vw);
+    --tinyFont: calc(6px + 0.698vw);
+    /* The character count on */
+    --smallLineHeight: calc(var(--smallFont) * 1.4);
+    --normallLineHeight: calc(var(--normalFont)*1.4);
+    --largelLineHeight: calc(var(--largeFont)* 1.4);
+    --largestlLineHeight: calc(var(--largestFont)* 1.4);
+    --letterSpacing: calc(var(--fontSize) * 0.0015);
+    --fontWeight: 300;
+}
+
+.testBG1 {
+    background-color: var(--testBG1)
+}
+
+.testBG2 {
+    background-color: var(--testBG2)
 }
 
 body {
-    width: 100%;
+    width: 100vw;
     height: auto;
+    font-family: 'Roboto', 'Segoe UI', sans-serif;
+    font-weight: 200;
+    font-size: var(--normalFont);
 }
+
+
+/* =========== START =========== SPECIALTY =========== ITEMS */
+
+.twoTone {
+    font-weight: 800;
+    color: black !important;
+    -webkit-text-stroke: .25px rgb(250, 250, 250);
+    -webkit-text-fill-color: rgb(0, 0, 0);
+}
+
+
+/* =========== END =========== SPECIALTY =========== ITEMS */
+
+
+/* =========== START =========== HEADER ===== & ====== NAV */
 
 .lfPic {
     background-image: url('../images/TrashPartyBanner.png');
@@ -16,15 +59,111 @@ nav {
     background-color: var(--trashy);
     position: relative;
     padding: 0 2vw;
+    -webkit-text-stroke: .25px black;
+    -webkit-text-fill-color: white;
 }
 
 #Trashy {
     position: absolute;
-    height: 64px;
+    height: 58px;
     transform: translateX(-50%);
     width: auto;
     left: 50%;
 }
+
+
+/* =========== END =========== HEADER ===== & ===== NAV */
+
+
+/* =========== START =========== WINDOW =========== */
+
+.window {
+    display: flex;
+    width: 90%;
+    height: 100%;
+}
+
+
+/* =========== END =========== WINDOW =========== */
+
+
+/* =========== START =========== LOGIN =========== */
+
+.btn {
+    color: black !important;
+}
+
+
+/* =========== END =========== LOGIN =========== */
+
+
+/* =========== START =========== FOOTER =========== */
+
+.lfPic--footer {
+    background-image: url('../images/TrashPartyBanner.png');
+    object-fit: stretch;
+    height: 90px;
+}
+
+footer,
+.lfPic--footer {
+    position: fixed;
+    height: 90px;
+    bottom: 0;
+    width: 100%;
+}
+
+footer {
+    background-color: var(--trashy-dingy);
+}
+
+footer p {
+    margin: 1vh 0;
+}
+
+.footer--links a,
+.footer--trashroutes a {
+    color: white;
+    text-decoration: none;
+    -webkit-text-stroke: .25px rgb(0, 0, 0);
+    -webkit-text-fill-color: rgb(255, 255, 255);
+    font-weight: 600;
+}
+
+.footer--trashroutes {
+    line-height: var(--smallLineHeight);
+    font-size: var(--smallFont);
+    -webkit-text-stroke: .25px rgb(0, 0, 0);
+    -webkit-text-fill-color: rgb(255, 255, 255);
+}
+
+.footer--links {
+    color: white;
+    font-size: var(--tinyFont);
+    /* -webkit-text-stroke: .25px rgb(0, 0, 0); */
+    -webkit-text-fill-color: rgb(255, 255, 255);
+}
+
+.footer--links a:hover,
+.footer--trashroutes a:hover {
+    text-shadow: 2px 2px 4px #ff38ee;
+}
+
+.copyright#text {
+    font-weight: 200;
+    margin-top: 0;
+    -webkit-text-stroke: unset;
+}
+
+.bottom {
+    margin-bottom: 0;
+}
+
+
+/* =========== END =========== FOOTER =========== */
+
+
+/* =========== START =========== MEDIAQUERIES =========== */
 
 @media only screen and (max-width:1000px) {
     /* #Trashy {
