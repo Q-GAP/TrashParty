@@ -1,4 +1,3 @@
-
 module.exports = {
     format_time: (date) => {
         return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
@@ -13,5 +12,7 @@ module.exports = {
 
         return word;
     }
+
 }
+
 

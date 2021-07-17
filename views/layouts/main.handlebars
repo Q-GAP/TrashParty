@@ -53,8 +53,12 @@
     </section>
     <!-- #endregion -->
     <main>
-        <div class="window testBG1">
-            {{#if body}} {{{body}}} {{/if}}
+
+        <div class="window">
+            {{#if body}}
+            {{{body}}}
+            {{/if}}
+
         </div>
     </main>
     <!-- #region FOOTER -->
@@ -62,15 +66,18 @@
         <footer class="center sticky">
             <div class="footer--trashroutes">
                 <p>
-                    <a href="/" class="brand">Trash<span class="twoTone">Party</span></a> {{#if loggedIn}} |
-                    <a href="/dashboard/">Dashboard</a> {{else}} | <a href="/login/">Login</a> | <a href="/signup/">SignUp</a> {{/if}}
+
+                    <a href="/" class="brand">Trash<span class="twoTone">Party</span></a>
+                    {{#if loggedIn}} |
+                    <a href="/dashboard/">Dashboard</a>
+                   {{else}} | <a href="/login/">Login</a> | <a href="/login/">SignUp</a>
+                   {{/if}}
                 </p>
             </div>
             <div class="footer--links">
                 <p class="bottom"> <strong class="brand">Trash<span class="twoTone">Party</span></strong> by <a href="https://github.com/Q-GAP/">Q-GAP</a> | Check Out the Code:
                     <a href="https://github.com/Q-GAP/TrashParty"><i class="fab fa-github"> Trash Source</i></a> |
                     <a href="mailto:support@peterroto.com"><i class="far fa-envelope"> Email Us</i></a>
-
                     <div class="copyright" align="center">
                         <script>
                             document.write('&copy;');
@@ -87,7 +94,8 @@
     <!-- #region JS -->
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="/js/index.js"></script>
+ <script src="/js/index.js"></script>
+
     <!-- endregion -->
 </body>
 
