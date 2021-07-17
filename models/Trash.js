@@ -1,9 +1,8 @@
-const { Model, DataTypes } = require('sequelize');
+const { DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Trash extends Model {}
 
-Trash.init({
+const Trash = sequelize.define('trash', {
     id: {
         type: DataTypes.INTEGER,
         allowNull: false,
@@ -14,13 +13,17 @@ Trash.init({
         type: DataTypes.STRING,
         allowNull: false,
     },
+    image: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
     rarity: {
         type: DataTypes.INTEGER,
         allowNull: true
     }
-},
-{
+}, {
     sequelize,
+    timestamps: false,
     freezeTableName: true,
     underscored: true,
     modelName: 'trash',

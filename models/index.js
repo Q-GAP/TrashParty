@@ -1,16 +1,16 @@
-const User = require('./User.js')
-const Trash = require('./Trash.js')
-const UsersTrash = require('./UsersTrash.js')
+const User = require('./User')
+const Trash = require('./Trash')
+const UserTrash = require('./Usertrash')
 
 
 
 // Super Many-To-Many Relationship
 
-Trash.belongsToMany(User, {through: UsersTrash})
-User.belongsToMany(Trash, {through: UsersTrash})
-Trash.hasMany(UsersTrash)
-UsersTrash.belongsTo(Trash)
-User.hasMany(UsersTrash)
-UsersTrash.belongsTo(User)
+Trash.belongsToMany(User, {through: UserTrash})
+User.belongsToMany(Trash, {through: UserTrash})
+Trash.hasMany(UserTrash)
+UserTrash.belongsTo(Trash)
+User.hasMany(UserTrash)
+UserTrash.belongsTo(User)
 
-module.exports = {User, Trash, UsersTrash}
+module.exports = {User, Trash, UserTrash}
