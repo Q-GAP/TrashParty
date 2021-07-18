@@ -2,9 +2,9 @@ const sequelize = require('../config/connection')
 const seedUsers = require("./usersData")
 const seedTrash = require("./trashData")
 const seedUsersTrash = require("./usersTrashData")
+const seedAllGifs = require("./gifdata")
 
-const seedAll = async () => {
-    await sequelize.sync({force: true})
+const seedBase = async () => {
 
     await seedUsers();
 
@@ -12,7 +12,17 @@ const seedAll = async () => {
 
     await seedUsersTrash();
 
-    process.exit(0);
+}
+
+const seedAll = async () => {
+
+    await sequelize.sync({force: true})
+
+    await seedBase()
+
+    await seedAllGifs()
+
+
 }
 
 seedAll();
