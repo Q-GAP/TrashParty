@@ -17,9 +17,11 @@ const Trash = sequelize.define('trash', {
         type: DataTypes.STRING,
         allowNull: false,
     },
+    category: {
+        type: DataTypes.STRING
+    },
     rarity: {
-        type: DataTypes.INTEGER,
-        allowNull: true
+        type: DataTypes.INTEGER
     }
 }, {
     sequelize,
