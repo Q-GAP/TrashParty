@@ -11,7 +11,7 @@ const fetchGifs = async (search) => {
         .then(res => res.json())
         .then(data => {
             const gifList = data.data.map(gif => {
-                return { image: gif.embed_url }
+                return { image: gif.images.fixed_height.url }
             });
             gifList.forEach((gif, index) => {
                 gif.category = search
