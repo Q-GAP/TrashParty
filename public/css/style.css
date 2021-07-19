@@ -92,14 +92,29 @@ nav ul a {
 /* =========== START =========== WINDOW =========== */
 
 .window {
-    background-image: url('/images/landfillwallpaper.jpeg');
-    background-size: auto;
+    background-image: url('/images/tpbg.gif');
+    background-size: cover;
     margin: 0 5%;
     padding: 5vh 5vw;
     width: 90%;
     height: 100%;
     min-height: 100vh;
 }
+
+
+/* .bg-img {
+    width: 100%;
+    height: 100%;
+    background: url('/images/tpbg.gif') center center no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(to bottom, #B5BAB5, #28393E);
+    opacity: .5;
+} */
 
 .sidenav {
     top: unset;
@@ -170,7 +185,7 @@ img.activator {
 }
 
 .login-signup a {
-    display: none;
+    /* display: none; */
     margin: 0;
     flex: 0 1 20%;
 }
