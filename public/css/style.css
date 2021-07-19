@@ -56,12 +56,24 @@ body {
     /* position: absolute; */
 }
 
+.lfPic,
+header {
+    position: fixed;
+    height: 64px;
+    top: 0;
+    width: 100%;
+}
+
 nav {
     background-color: var(--trashy);
     position: relative;
     padding: 0 2vw;
     -webkit-text-stroke: .25px black;
     -webkit-text-fill-color: white;
+}
+
+nav ul a {
+    font-size: var(--normalFont) !important;
 }
 
 #Trashy {
@@ -80,14 +92,44 @@ nav {
 
 .window {
     background-image: url('/images/landfillwallpaper.jpeg');
+    background-size: auto;
     margin: 0 5%;
-    padding: 10vh 10vw;
+    padding: 5vh 5vw;
     width: 90%;
     height: 100vh;
 }
 
+.sidenav {
+    top: unset;
+    position: fixed;
+    z-index: 9999 !important;
+}
+
+
+/* Get Materialzejs to work with handlebars */
+
+.sidenav-overlay {
+    position: unset !important;
+    background-color: transparent !important;
+    height: 0 !important;
+    width: 0 !important;
+}
+
 
 /* =========== END =========== WINDOW =========== */
+
+
+/* =========== START =========== SPLASH =========== */
+
+#splash {
+    width: 90%;
+    height: 60%;
+    background-color: var(--ratty);
+    text-align: center;
+}
+
+
+/* =========== END =========== SPLASH =========== */
 
 
 /* =========== START =========== LOGIN =========== */
@@ -100,6 +142,7 @@ hr,
 img.activator {
     flex: 0 1 60%;
     padding: .5rem 2rem 0;
+    z-index: 100;
 }
 
 .card-content span,
@@ -118,7 +161,9 @@ img.activator {
 .login.card,
 .signup.card {
     background-color: var(--ratty);
-    flex: 0 0 33%;
+    flex: 0 0 300px;
+    margin: 30% 0;
+    /* mix-blend-mode: normal; */
 }
 
 
@@ -143,6 +188,7 @@ footer,
 
 footer {
     background-color: var(--trashy-dingy);
+    z-index: 10;
 }
 
 footer p {
@@ -207,5 +253,8 @@ footer p {
     .login.card,
     .signup.card {
         flex: 1 0 75%;
+    }
+    .login-signup {
+        gap: 0;
     }
 }
