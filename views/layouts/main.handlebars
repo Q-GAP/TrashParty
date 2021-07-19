@@ -24,8 +24,8 @@
         <header>
             <nav>
                 <div class="nav-wrapper">
-                    <a href="#!" class="brand brand-logo">Trash<span class="twoTone">Party</span></a>
-                    <a href="#"><img class="center" id="Trashy" src="/images/Trashy.png">
+                    <a href="/" class="brand brand-logo">Trash<span class="twoTone">Party</span></a>
+                    <a href="/"><img class="center" id="Trashy" src="/images/Trashy.png">
                     </a>
                     <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                     <ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -53,13 +53,15 @@
     </section>
     <!-- #endregion -->
     <main>
-
+{{!-- <div class="bg-img"> --}}
         <div class="window">
+
             {{#if body}}
             {{{body}}}
             {{/if}}
 
         </div>
+        {{!-- </div> --}}
     </main>
     <!-- #region FOOTER -->
     <section class="lfPic--footer">
@@ -69,8 +71,8 @@
 
                     <a href="/" class="brand">Trash<span class="twoTone">Party</span></a>
                     {{#if loggedIn}} |
-                    <a href="/dashboard/">Dashboard</a>
-                   {{else}} | <a href="/login/">Login</a> | <a href="/login/">SignUp</a>
+                    <a href="/dashboard">Dashboard</a>
+                   {{else}} | <a href="/login">Login</a> | <a href="/login/">SignUp</a>
                    {{/if}}
                 </p>
             </div>
