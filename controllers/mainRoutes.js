@@ -9,7 +9,10 @@ router.get('/login', (req, res) => {
     res.render('login');
     return;
 });
-
+router.get('/signup', (req, res) => {
+    res.render('login');
+    return;
+});
 
 // TODO: FINISH ROUTE
 router.get('/', async (req, res) => {

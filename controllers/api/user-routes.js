@@ -77,15 +77,14 @@ router.post('/logout', (req, res) => {
     }
 });
 
-router.get('/:id', async (req, res) => {
+router.get('/:id', async(req, res) => {
     try {
         const user = await User.findByPk(req.params.id, {
             attributes: ["username", "id", "email"],
-            include: [{model: UserTrash, include:[{model: Trash}]}]
+            include: [{ model: UserTrash, include: [{ model: Trash }] }]
         })
         res.status(200).json(user)
-    }
-    catch (err) {
+    } catch (err) {
         res.status(400).json(err)
     }
 })
