@@ -62,6 +62,7 @@ header {
     height: 64px;
     top: 0;
     width: 100%;
+    z-index: 1000;
 }
 
 nav {
@@ -96,7 +97,8 @@ nav ul a {
     margin: 0 5%;
     padding: 5vh 5vw;
     width: 90%;
-    height: 100vh;
+    height: 100%;
+    min-height: 100vh;
 }
 
 .sidenav {
@@ -142,7 +144,15 @@ hr,
 img.activator {
     flex: 0 1 60%;
     padding: .5rem 2rem 0;
-    z-index: 100;
+    /* z-index: 100 !important; */
+}
+
+.quickPick {
+    position: absolute;
+    /* top: 80px; */
+    left: 0;
+    width: 100%;
+    margin: 30% 0;
 }
 
 .card-content span,
@@ -152,17 +162,24 @@ img.activator {
 }
 
 .login-signup {
+    padding-top: 70px;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    gap: 20%;
+    column-gap: calc(5rem * 1.5)
+}
+
+.login-signup a {
+    display: none;
+    margin: 0;
+    flex: 0 1 20%;
 }
 
 .login.card,
 .signup.card {
     background-color: var(--ratty);
     flex: 0 0 300px;
-    margin: 30% 0;
+    margin: 5% 0;
     /* mix-blend-mode: normal; */
 }
 
@@ -184,15 +201,15 @@ footer,
     height: 90px;
     bottom: 0;
     width: 100%;
+    z-index: 1000 !important;
 }
 
 footer {
     background-color: var(--trashy-dingy);
-    z-index: 10;
 }
 
 footer p {
-    margin: 1vh 0;
+    margin: 0 0;
 }
 
 .footer--links a,
@@ -249,12 +266,18 @@ footer p {
     }
 }
 
-@media only screen and (max-width:768) {
-    .login.card,
+@media only screen and (max-width:768px) {
+    /* .login.card,
     .signup.card {
-        flex: 1 0 75%;
-    }
+        flex: 1 0 45%;
+    } */
     .login-signup {
-        gap: 0;
+        padding-top: 2.5vh;
+        column-gap: 5rem;
+    }
+    .login-signup a {
+        display: inline-flex;
+        margin: 0;
+        flex: 0 1 20%;
     }
 }
