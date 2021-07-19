@@ -16,24 +16,55 @@ router.get('/signup', (req, res) => {
 
 // TODO: FINISH ROUTE
 router.get('/', (req, res) => {
+    if (req.session.loggedIn) {
+        res.render('dashboard', { username: req.session.username })
+    } else {
+        User.findAll({
+            attributes: ['id', 'username', 'lastOpened']
 
+        }).then((userData) => {
+            if (!userData) {
+                res.status(404).json({ message: "No one's at the TrashPARTY YET!! \n or Your data's corrupt. . ." })
+                return;
+            }
 
-    res.render('splash')
-        // if (loggedIn) {
-        //     User.findall({
-        //         attributes: ['id', 'username', 'lastPackOpened', '']
+            const users = userData.map(user => user.get({ plain: true }));
 
+            res.render('splash', { users, loggedIn: !req.session.loggedIn });
 
-    //     })
+        })
+    }
+})
 
-    // } else
+router.get('/dashboard', (req, res) => {
+    // if (req.session.loggedIn) {
+    User.findAll({
+            where: {
+                // use the ID from the session
+                user_id: req.session.id
+            },
+            attributes: [
+                'id',
+                'username',
+                'lastOpened'
+            ],
+            include: [{
+                model: userTrash,
+                attributes: ['id', 'inLandfill', 'trashId']
+                    // }
+                    // ,{
+                    //     include: [{
+                    //         model: Trash,
+                    //         attributes: ['id', 'name', 'image', 'category', 'rarity']
+                    //     }]
+            }]
 
-    //     User.findall({
-    //     attributes: ['id', 'lastOpened', 'username']
-    // })
-    // res.render('splash');
-
-});
+        }).then(dashData => {
+            const dashinfo = dashData.map(item => item.get({ plain: true }))
+            res.render('dashboard', dashinfo)
+        })
+        // }
+})
 
 
 module.exports = router
