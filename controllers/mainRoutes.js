@@ -9,7 +9,10 @@ router.get('/login', (req, res) => {
     res.render('login');
     return;
 });
-
+router.get('/signup', (req, res) => {
+    res.render('login');
+    return;
+});
 
 // TODO: FINISH ROUTE
 router.get('/', (req, res) => {
@@ -28,7 +31,7 @@ router.get('/', (req, res) => {
     //     User.findall({
     //     attributes: ['id', 'lastOpened', 'username']
     // })
-    res.render('splash');
+    // res.render('splash');
 
 });
 
