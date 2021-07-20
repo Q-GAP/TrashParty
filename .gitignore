@@ -11,4 +11,4 @@ node_modules
 .env
 
 #packag-lock
-packag-lock.json
+package-lock.json
