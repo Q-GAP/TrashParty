@@ -143,6 +143,10 @@ body {
 
 /* =========== START =========== SPECIALTY =========== ITEMS */
 
+.author {
+    font-weight: 100;
+}
+
 .tp-text-grey {
     color: var(--tp_lightgrey);
     -webkit-text-stroke: .5px var(--tp_slate);
@@ -470,6 +474,7 @@ footer p {
     height: 10em;
     /* Your height here */
     overflow: hidden;
+    background-color: var(--tp_lightgrey);
 }
 
 .rare {
