@@ -33,6 +33,7 @@ body {
     font-family: 'Roboto', 'Segoe UI', sans-serif;
     font-weight: 200;
     font-size: var(--normalFont);
+    overflow-x: hidden;
 }
 
 
@@ -96,7 +97,10 @@ nav ul a {
     margin: 0 5%;
     padding: 5vh 5vw;
     width: 90%;
-    height: 100vh;
+    /* height: 100vh; */
+    height: 100%;
+    min-height: 100vh;
+    overflow: scroll;
 }
 
 .sidenav {
@@ -236,6 +240,34 @@ footer p {
 
 /* =========== END =========== FOOTER =========== */
 
+/* =========== START =========== TRASHCARDS =========== */
+.card-image {     
+    height: 10em; /* Your height here */     
+    overflow: hidden; 
+}
+
+.rare {
+    box-shadow: 10px 5px 5px rgb(223, 18, 250);
+}
+
+.uncommon {
+    box-shadow: 7px 3px 3px rgb(76, 109, 255);
+}
+
+.common {
+    box-shadow: 5px 2px 2px rgb(109, 109, 109);
+}
+
+.category {
+    font-size: 1vw;
+}
+
+/* .trashContainer {
+    height: 100%;
+    overflow: scroll;
+} */
+
+/* =========== END =========== TRASHCARDS =========== */
 
 /* =========== START =========== MEDIAQUERIES =========== */
 
@@ -247,12 +279,24 @@ footer p {
     .brand-logo {
         display: none !important;
     }
+    .card-image {     
+        height: 12em;     
+    }
+    .category {
+        font-size: 1.5vw;
+    }
 }
 
-@media only screen and (max-width:768) {
+@media only screen and (max-width:768px) {
     .login.card,
     .signup.card {
         flex: 1 0 75%;
+    }
+    .card-image {     
+        height: 15em;     
+    }
+    .category {
+        font-size: 2.5vw
     }
     .login-signup {
         gap: 0;

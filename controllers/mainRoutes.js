@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { userTrash, Trash, User } = require('../models');
+const { Trash, User, UserTrash } = require('../models');
 
 
 //If the user is logged in, redirect to dashboard. If not render the login page.
@@ -15,8 +15,7 @@ router.get('/signup', (req, res) => {
 });
 
 // TODO: FINISH ROUTE
-router.get('/', (req, res) => {
-
+router.get('/', async (req, res) => {
 
     res.render('splash')
         // if (loggedIn) {
@@ -35,5 +34,13 @@ router.get('/', (req, res) => {
 
 });
 
+router.get('/collection', async (req, res) => {
+    const userTrashList = await UserTrash.findAll({where: {userId: 1}, include:[{model: Trash}]})
+    const trashList = userTrashList.map((trash) => trash.get({plain:true}))
+
+    res.render('collection', {
+        trashList: trashList
+    })
+})
 
 module.exports = router
