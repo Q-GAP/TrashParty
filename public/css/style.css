@@ -39,6 +39,11 @@ body {
 
 /* =========== START =========== SPECIALTY =========== ITEMS */
 
+h3.twoTone span {
+    font-style: italic;
+    font-weight: 200;
+}
+
 .twoTone {
     font-weight: 800;
     color: black !important;
@@ -271,10 +276,13 @@ footer p {
 
 /* =========== END =========== FOOTER =========== */
 
+
 /* =========== START =========== TRASHCARDS =========== */
-.card-image {     
-    height: 10em; /* Your height here */     
-    overflow: hidden; 
+
+.card-image {
+    height: 10em;
+    /* Your height here */
+    overflow: hidden;
 }
 
 .rare {
@@ -293,12 +301,15 @@ footer p {
     font-size: 1vw;
 }
 
+
 /* .trashContainer {
     height: 100%;
     overflow: scroll;
 } */
 
+
 /* =========== END =========== TRASHCARDS =========== */
+
 
 /* =========== START =========== MEDIAQUERIES =========== */
 
@@ -310,8 +321,8 @@ footer p {
     .brand-logo {
         display: none !important;
     }
-    .card-image {     
-        height: 12em;     
+    .card-image {
+        height: 12em;
     }
     .category {
         font-size: 1.5vw;
@@ -319,23 +330,20 @@ footer p {
 }
 
 @media only screen and (max-width:768px) {
-
     /* .login.card,
     .signup.card {
         flex: 1 0 45%;
     } */
-  
     .login.card,
     .signup.card {
         flex: 1 0 75%;
     }
-    .card-image {     
-        height: 15em;     
+    .card-image {
+        height: 15em;
     }
     .category {
         font-size: 2.5vw
     }
-
     .login-signup {
         padding-top: 2.5vh;
         column-gap: 5rem;
