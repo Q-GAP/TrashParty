@@ -1,18 +1,20 @@
+// Sidebar to play nice with handlebars.
 $('.sidenav-trigger').on('click', () => {
-    $('.login-signup').children().toggle();
+    $('.login-signup').children().hide();
 })
 
 
 $(window).on('click', (e) => {
-    let ignore = document.querySelector('.sn')
-    if (e.target == ignore.firstChild || e.target == document.querySelector('i')) {
-        console.log(e.target)
-    } else {
-        document.querySelector('.sidenav-overlay').click();
-        $('.login-signup').children().show();
-    }
+        let ignore = document.querySelector('.sn')
+        if (e.target == ignore.firstChild || e.target == document.querySelector('i')) {
+            console.log(e.target)
+        } else {
+            document.querySelector('.sidenav-overlay').click();
+            $('.login-signup').children().show();
+        }
 
-})
+    })
+    // Start Real Code.
 
 // Login
 const loginFormHandler = async(event) => {
@@ -54,14 +56,14 @@ const signupFormHandler = async(event) => {
             headers: { 'Content-Type': 'application/json' },
         });
 
-        if (response.ok) {
+        if (response.status === 200) {
             console.log('Successfully signed up as ' + username)
-            document.location.redirect('/');
+            document.location.replace('/');
         } else {
             alert('Failed to sign up.');
         }
     }
 };
 
-$('#submitSignUp').on('click', signupFormHandler);
+$('#signupBtn').on('click', signupFormHandler);
 $('#loginBtn').on('click', loginFormHandler);
