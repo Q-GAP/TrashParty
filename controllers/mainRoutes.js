@@ -18,12 +18,30 @@ router.get('/', async(req, res) => {
 
 
 
-            res.render('splash', { users, username: req.session.username, loggedIn: req.session.loggedIn });
+            res.render('splash', { layout: 'main', users: users, username: req.session.username, loggedIn: req.session.loggedIn });
         })
     } else {
-        res.render('splash', { loggedIn: false })
+        await User.findAll({
+            attributes: ['id', 'username', 'lastOpened', 'updatedAt'],
+            order: [
+                ['updatedAt', 'DESC']
+            ],
+            limit: 5
+        }).then((userData) => {
+            if (!userData) {
+                res.status(404).json({ message: "No one's at the TrashPARTY YET!! \n or Your data's corrupt. . ." })
+                return;
+            }
+
+            const users = userData.map(user => user.get({ plain: true }));
+            console.log('\n \n users:' + JSON.stringify(users) + '\n \n');
+
+            res.render('splash', { users: users, loggedIn: false })
+        })
     }
+
 })
+
 
 //If the user is logged in, redirect to dashboard. If not render the login page.
 
