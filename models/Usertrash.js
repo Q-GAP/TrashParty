@@ -7,20 +7,21 @@ const UserTrash = sequelize.define('usertrash', {
         allowNull: false,
         primaryKey: true,
         autoIncrement: true,
-      },
+    },
     userId: {
         type: DataTypes.INTEGER
     },
     trashId: {
         type: DataTypes.INTEGER
     },
-      inLandfill: {
-          type: DataTypes.BOOLEAN,
-          defaultValue: false
-      }
+    inLandfill: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: false
+    }
 }, {
     sequelize,
-    timestamps: false,
+    // ! Had to put timestamps on for lastOpened panel PLEASE TELL ME IF I'm WRONG.
+    timestamps: true,
     freezeTableName: true,
     underscored: true,
     modelName: 'usertrash',
