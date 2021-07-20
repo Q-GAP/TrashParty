@@ -32,7 +32,7 @@
                         {{#if loggedIn}}
                         <li><a href="/landfill/">Landfill</a></li>
                         <li><a href="/collection/">Collection</a></li>
-                        <li><a href="/logout/">Logout</a></li>
+                        <li><a id="logout">Logout</a></li>
                         {{else}}
                         <li><a href="/login/">Login/Signup</a></li>
                         {{/if}}
@@ -41,12 +41,12 @@
             </nav>
             <ul class="sidenav" id="mobile-demo">
                 {{#if loggedIn}}
-                <li class="sn"></li><a href="/landfill/">Landfill</a></li>
-                <li class="sn"><a href="/collection/">Collection</a></li>
-                <li class="sn"><a href="/logout/">Logout</a></li>
+                <li class="sn"></li><a href="/landfill">Landfill</a></li>
+                <li class="sn"><a href="/collection">Collection</a></li>
+                <li class="sn"><a id="logout">Logout</a></li>
                 {{else}}
-                <li class="sn"><a href="/login/">Login</a></li>
-                <li class="sn"><a href="/login/">Sign Up</a></li>
+                <li class="sn"><a href="/login">Login</a></li>
+                <li class="sn"><a href="/login">Sign Up</a></li>
                 {{/if}}
             </ul>
         </header>
@@ -68,11 +68,11 @@
         <footer class="center sticky">
             <div class="footer--trashroutes">
                 <p>
-
                     <a href="/" class="brand">Trash<span class="twoTone">Party</span></a>
                     {{#if loggedIn}} |
                     <a href="/dashboard">Dashboard</a>
-                   {{else}} | <a href="/login">Login</a> | <a href="/login/">SignUp</a>
+                   {{else}} 
+                   | <a href="/login">Login</a> | <a href="/login/">SignUp</a>
                    {{/if}}
                 </p>
             </div>
