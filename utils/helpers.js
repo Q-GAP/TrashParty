@@ -11,8 +11,18 @@ module.exports = {
         }
 
         return word;
+    },
+    if_eq: (a, b) => {
+        if(a == b) {
+            return true
+        }
+        else {
+            return false
+        }
+    },
+    stillGif: (gif) => {
+        return gif.replace("200.gif", "200_s.gif")
     }
-
 }
 
 
