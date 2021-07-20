@@ -33,10 +33,16 @@ body {
     font-family: 'Roboto', 'Segoe UI', sans-serif;
     font-weight: 200;
     font-size: var(--normalFont);
+    overflow-x: hidden;
 }
 
 
 /* =========== START =========== SPECIALTY =========== ITEMS */
+
+h3.twoTone span {
+    font-style: italic;
+    font-weight: 200;
+}
 
 .twoTone {
     font-weight: 800;
@@ -62,6 +68,7 @@ header {
     height: 64px;
     top: 0;
     width: 100%;
+    z-index: 1000;
 }
 
 nav {
@@ -91,13 +98,31 @@ nav ul a {
 /* =========== START =========== WINDOW =========== */
 
 .window {
-    background-image: url('/images/landfillwallpaper.jpeg');
-    background-size: auto;
+    background-image: url('/images/tpbg.gif');
+    background-size: cover;
     margin: 0 5%;
     padding: 5vh 5vw;
     width: 90%;
-    height: 100vh;
+    /* height: 100vh; */
+    height: 100%;
+    min-height: 100vh;
+    overflow: scroll;
 }
+
+
+/* .bg-img {
+    width: 100%;
+    height: 100%;
+    background: url('/images/tpbg.gif') center center no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(to bottom, #B5BAB5, #28393E);
+    opacity: .5;
+} */
 
 .sidenav {
     top: unset;
@@ -142,7 +167,15 @@ hr,
 img.activator {
     flex: 0 1 60%;
     padding: .5rem 2rem 0;
-    z-index: 100;
+    /* z-index: 100 !important; */
+}
+
+.quickPick {
+    position: absolute;
+    /* top: 80px; */
+    left: 0;
+    width: 100%;
+    margin: 30% 0;
 }
 
 .card-content span,
@@ -152,17 +185,24 @@ img.activator {
 }
 
 .login-signup {
+    padding-top: 70px;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    gap: 20%;
+    column-gap: calc(5rem * 1.5)
+}
+
+.login-signup a {
+    /* display: none; */
+    margin: 0;
+    flex: 0 1 20%;
 }
 
 .login.card,
 .signup.card {
     background-color: var(--ratty);
     flex: 0 0 300px;
-    margin: 30% 0;
+    margin: 5% 0;
     /* mix-blend-mode: normal; */
 }
 
@@ -184,15 +224,15 @@ footer,
     height: 90px;
     bottom: 0;
     width: 100%;
+    z-index: 1000 !important;
 }
 
 footer {
     background-color: var(--trashy-dingy);
-    z-index: 10;
 }
 
 footer p {
-    margin: 1vh 0;
+    margin: 0 0;
 }
 
 .footer--links a,
@@ -237,6 +277,40 @@ footer p {
 /* =========== END =========== FOOTER =========== */
 
 
+/* =========== START =========== TRASHCARDS =========== */
+
+.card-image {
+    height: 10em;
+    /* Your height here */
+    overflow: hidden;
+}
+
+.rare {
+    box-shadow: 10px 5px 5px rgb(223, 18, 250);
+}
+
+.uncommon {
+    box-shadow: 7px 3px 3px rgb(76, 109, 255);
+}
+
+.common {
+    box-shadow: 5px 2px 2px rgb(109, 109, 109);
+}
+
+.category {
+    font-size: 1vw;
+}
+
+
+/* .trashContainer {
+    height: 100%;
+    overflow: scroll;
+} */
+
+
+/* =========== END =========== TRASHCARDS =========== */
+
+
 /* =========== START =========== MEDIAQUERIES =========== */
 
 @media only screen and (max-width:1000px) {
@@ -247,14 +321,36 @@ footer p {
     .brand-logo {
         display: none !important;
     }
+    .card-image {
+        height: 12em;
+    }
+    .category {
+        font-size: 1.5vw;
+    }
 }
 
-@media only screen and (max-width:768) {
+@media only screen and (max-width:768px) {
+    /* .login.card,
+    .signup.card {
+        flex: 1 0 45%;
+    } */
     .login.card,
     .signup.card {
         flex: 1 0 75%;
     }
+    .card-image {
+        height: 15em;
+    }
+    .category {
+        font-size: 2.5vw
+    }
     .login-signup {
-        gap: 0;
+        padding-top: 2.5vh;
+        column-gap: 5rem;
+    }
+    .login-signup a {
+        display: inline-flex;
+        margin: 0;
+        flex: 0 1 20%;
     }
 }
