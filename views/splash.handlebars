@@ -1,6 +1,11 @@
 <div id="splash" class="container">
+   {{#if loggedIn}}
+        <h1 class="white-text">Welcome, {{username}}!</h1>
+        <h3 class="twoTone"> Remember, <br><span>Stay Trashy!</span></h3>
+        {{else}}
     <h1 class="white-text">Welcome to Trash<span class="twoTone">Party</span><h1>
         <h3>This is a SPLASH SCREEN</h3>
+        {{/if}}
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script src="/js/index.js"></script>
