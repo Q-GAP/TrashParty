@@ -7,8 +7,8 @@ node_modules
 # .VSCode
 .vscode
 
-#.env
+# dotenv
 .env
 
-#packag-lock
+# packag-lock
 package-lock.json
