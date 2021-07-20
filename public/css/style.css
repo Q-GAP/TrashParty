@@ -2,12 +2,20 @@
     --trashy: #0c68004d;
     --trashy-dingy: #0c680071;
     --ratty: #79b804b7;
+    /* Quanisha's Theme */
+    --tp_red: #8F0000;
+    --tp_slate: #28393E;
+    --tp_tan: #8B5D2F;
+    --tp_lavendar: #976E8C;
+    --tp_yellow: #F4AE3E;
+    --tp_teal: #79a497c2;
+    --tp_lightgrey: #B5BAB5;
     --testBG1: #faab00a1;
     --testBG1: #00e1ff9a;
     --border-radius: 0.3rem;
-    --largestFont: calc(18px + 0.698vw);
-    --largeFont: calc(14px +0.698vw);
-    --normalFont: calc(12px + 0.698vw);
+    --largestFont: calc(18px + 0.85vw);
+    --largeFont: calc(14px + .75vw);
+    --normalFont: calc(12px + 0.5vw);
     --smallFont: calc(9px + 0.698vw);
     --tinyFont: calc(6px + 0.698vw);
     /* The character count on */
@@ -19,6 +27,98 @@
     --fontWeight: 300;
 }
 
+.dots-bars-6 {
+    display: none;
+    width: 40px;
+    height: 20px;
+    --c: radial-gradient(farthest-side, currentColor 93%, #0000);
+    background: var(--c) 0 0, var(--c) 50% 0;
+    background-size: 8px 8px;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    clip-path: inset(-200% -100% 0 0);
+    animation: db6-0 1.5s linear infinite;
+    box-sizing: border-box;
+}
+
+.dots-bars-6:before {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 12px;
+    background: currentColor;
+    left: -16px;
+    top: 0;
+    animation: db6-1 1.5s linear infinite, db6-2 0.5s cubic-bezier(0, 200, .8, 200) infinite;
+}
+
+.dots-bars-6:after {
+    content: "";
+    position: absolute;
+    top: 50;
+    left: 50;
+    inset: 0 0 auto auto;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: currentColor;
+    animation: db6-3 1.5s linear infinite;
+}
+
+@keyframes db6-0 {
+    0%,
+    30% {
+        background-position: 0 0, 50% 0
+    }
+    33% {
+        background-position: 0 100%, 50% 0
+    }
+    41%,
+    63% {
+        background-position: 0 0, 50% 0
+    }
+    66% {
+        background-position: 0 0, 50% 100%
+    }
+    74%,
+    100% {
+        background-position: 0 0, 50% 0
+    }
+}
+
+@keyframes db6-1 {
+    90% {
+        transform: translateY(0)
+    }
+    95% {
+        transform: translateY(15px)
+    }
+    100% {
+        transform: translateY(15px);
+        left: calc(100% - 8px)
+    }
+}
+
+@keyframes db6-2 {
+    100% {
+        top: -0.1px
+    }
+}
+
+@keyframes db6-3 {
+    0%,
+    80%,
+    100% {
+        transform: translate(0)
+    }
+    90% {
+        transform: translate(26px)
+    }
+}
+
 .testBG1 {
     background-color: var(--testBG1)
 }
@@ -27,17 +127,34 @@
     background-color: var(--testBG2)
 }
 
+.trashy {
+    background-color: var(--ratty);
+}
+
 body {
     width: 100vw;
     height: auto;
     font-family: 'Roboto', 'Segoe UI', sans-serif;
-    font-weight: 200;
+    font-weight: 300;
     font-size: var(--normalFont);
     overflow-x: hidden;
 }
 
 
 /* =========== START =========== SPECIALTY =========== ITEMS */
+
+.tp-text-grey {
+    color: var(--tp_lightgrey);
+    -webkit-text-stroke: .5px var(--tp_slate);
+}
+
+.tp-text-purple {
+    color: var(--tp_purple);
+}
+
+.tp-text-slate {
+    color: var(--tp_slate);
+}
 
 h3.twoTone span {
     font-style: italic;
@@ -47,7 +164,7 @@ h3.twoTone span {
 .twoTone {
     font-weight: 800;
     color: black !important;
-    -webkit-text-stroke: .25px rgb(250, 250, 250);
+    -webkit-text-stroke: .5px rgb(250, 250, 250);
     -webkit-text-fill-color: rgb(0, 0, 0);
 }
 
@@ -101,7 +218,10 @@ nav ul a {
     background-image: url('/images/tpbg.gif');
     background-size: cover;
     margin: 0 5%;
-    padding: 5vh 5vw;
+    padding-top: calc(64px + 1vh);
+    padding-left: 3vw;
+    padding-right: 3vw;
+    padding-bottom: calc(90px +1vw);
     width: 90%;
     /* height: 100vh; */
     height: 100%;
@@ -147,10 +267,77 @@ nav ul a {
 /* =========== START =========== SPLASH =========== */
 
 #splash {
-    width: 90%;
+    width: 100%;
     height: 60%;
-    background-color: var(--ratty);
+    /* background-color: var(--ratty); */
+    font-weight: bold;
     text-align: center;
+}
+
+#splash h1 {
+    -webkit-text-stroke: .5px #28393E;
+}
+
+.TrashCollectors {
+    background-color: var(--tp_slate);
+    border: 1px solid var(--tp_red);
+    margin: 2vh 1vw;
+}
+
+.TrashCollectors .header {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.inline-Trashy {
+    max-width: 7%;
+    display: inline-block;
+    vertical-align: middle;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.splash-container {
+    background-color: var(--tp_teal);
+}
+
+.splash-container>h2 {
+    padding-top: 1vh;
+}
+
+.splash-container .col,
+.splash-container .row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.fiveCard .card-title {
+    background-color: var(--tp_slate);
+    font-size: var(--largeFont);
+    font-variant: small-caps;
+    padding: auto 2vw;
+}
+
+.fiveCard .card-title i {
+    float: right;
+    margin: 1vh;
+}
+
+.fiveCard .card-content {
+    border: 1px solid var(--tp_slate);
+}
+
+.fiveCard-logo {
+    max-width: 50%;
+    margin: 0 auto;
+    height: auto;
+}
+
+.fiveWall {
+    flex: 1 1 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
 }
 
 
@@ -279,7 +466,7 @@ footer p {
 
 /* =========== START =========== TRASHCARDS =========== */
 
-.card-image {
+.trashCard .card-image {
     height: 10em;
     /* Your height here */
     overflow: hidden;
@@ -314,14 +501,10 @@ footer p {
 /* =========== START =========== MEDIAQUERIES =========== */
 
 @media only screen and (max-width:1000px) {
-    /* #Trashy {
-        left: 0;
-        transform: unset;
-    } */
     .brand-logo {
         display: none !important;
     }
-    .card-image {
+    .trashCard .card-image {
         height: 12em;
     }
     .category {
@@ -330,18 +513,10 @@ footer p {
 }
 
 @media only screen and (max-width:768px) {
-    /* .login.card,
-    .signup.card {
-        flex: 1 0 45%;
-    } */
-    .login.card,
-    .signup.card {
-        flex: 1 0 75%;
-    }
-    .card-image {
+    .trashCard .card-image {
         height: 15em;
     }
-    .category {
+    .trashCard .category {
         font-size: 2.5vw
     }
     .login-signup {
