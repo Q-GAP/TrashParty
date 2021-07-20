@@ -29,12 +29,13 @@ const loginFormHandler = async(event) => {
             body: JSON.stringify({ email, password }),
             headers: { 'Content-Type': 'application/json' },
         });
-
+        console.log(response)
         if (response.ok) {
             console.log('Succesfully logged in as ' + email)
             document.location.replace('/');
         } else {
-            alert('Failed to log in.', err);
+            alert('Failed to log in. \n STATUS: ' + response.status + '\n STATUS TEXT:' + response.statusText + '\n \n Make sure to check your credentials \n -or- \n Remember to signup below. \n');
+            document.location.reload();
         }
     }
 };
@@ -60,7 +61,8 @@ const signupFormHandler = async(event) => {
             console.log('Successfully signed up as ' + username)
             document.location.replace('/');
         } else {
-            alert('Failed to sign up.');
+            alert("So that didn't go as planned" + '\n STATUS: ' + response.status + '\n STATUS TEXT:' + response.statusText + '\n \n Make sure to check your credentials \n -or- \n Remember to signup below. \n');
+            document.location.reload();
         }
     }
 };
