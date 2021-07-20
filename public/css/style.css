@@ -470,6 +470,7 @@ footer p {
     height: 10em;
     /* Your height here */
     overflow: hidden;
+    background-color: var(--tp_lightgrey);
 }
 
 .rare {
