@@ -196,12 +196,13 @@ nav {
     background-color: var(--trashy);
     position: relative;
     padding: 0 2vw;
-    -webkit-text-stroke: .25px black;
-    -webkit-text-fill-color: white;
 }
 
 nav ul a {
     font-size: var(--normalFont) !important;
+    font-weight: 500;
+    -webkit-text-stroke: .25px black;
+    -webkit-text-fill-color: white;
 }
 
 #Trashy {
