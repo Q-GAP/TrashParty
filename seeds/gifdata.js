@@ -3,7 +3,7 @@ const fetch = require('node-fetch');
 var randomWords = require('random-words');
 const { Trash } = require("../models")
 
-const categories = ["Cat", "Dog", "Car", "Superhero", "Ghost", "Game", ""]
+const categories = ["Cat", "Dog", "Car", "Superhero", "Ghost", "Game", "Food", "Movie", "Fish", "Amphibian"]
 
 const fetchGifs = async (search) => {
 
