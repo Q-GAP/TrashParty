@@ -14,6 +14,23 @@ router.get('/', async (req, res) => {
     }
 })
 
+router.get('/landfill/:id', async (req, res) => {
+    try {
+        const movingTrash = await UserTrash.findByPk(req.params.id)
+        if(movingTrash.userId = req.session.userId) {
+            movingTrash.inLandfill = true;
+            movingTrash.save()
+            res.status(200).json(movingTrash);
+        }
+        else {
+            res.status(400).json({message: "Trash does not belong to you"})
+        }
+    }
+    catch (err) {
+        res.status(400).json(err)
+    }
+})
+
 router.post('/', async (req, res) => {
     try {
         // const newTrash = await UserTrash.create({
