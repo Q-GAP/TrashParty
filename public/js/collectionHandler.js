@@ -1,6 +1,6 @@
 const landfillAddHandler = async (event) => {
     const trashId = event.target.dataset.trashid
-    const response = await fetch(`/api/usertrash/landfill/${trashId}`, {
+    const response = await fetch(`/api/landfill/${trashId}`, {
         method: "GET",
         headers: { 'Content-Type': 'application/json' }
     })

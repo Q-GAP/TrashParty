@@ -15,7 +15,7 @@ const logout = async() => {
     }
 };
 
-if (document.location.pathname === "/collection/") {
+if (document.location.pathname === "/collection/" || document.location.pathname === "/landfill/") {
     $('.window').css('background-image', "url('/images/landfillwallpaper.jpeg')");
 } else {
     $('window').css('background-image', "url('/images/tpbg.gif')")
