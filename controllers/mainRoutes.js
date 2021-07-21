@@ -142,4 +142,29 @@ router.get('/collection', async(req, res) => {
     }
 })
 
+router.get('/landfill', async(req, res) => {
+    try {
+        const landfillList = await UserTrash.findByPk({ where: { inLandfill: true }, include: [{ model: Trash }] })
+        const landfillList = userTrashList.map((trash) => trash.get({ plain: true }))
+        console.log('\n \n TRASHLIST: \n' + trashList.length + '\n \n')
+        if (trashList.length == 0) {
+            trashList.push(TP_example)
+            res.render('collection', {
+                loggedIn: req.session.loggedIn,
+                trashList: trashList
+            })
+        } else {
+            console.log('\n \nELSE \n \n')
+            res.render('collection', {
+                loggedIn: req.session.loggedIn,
+                trashList: trashList
+            })
+        }
+    } catch (err) {
+        console.log(err);
+        res.status(401).redirect('/');
+
+    }
+})
+
 module.exports = router
