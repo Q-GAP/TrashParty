@@ -15,4 +15,10 @@ const logout = async() => {
     }
 };
 
+if (document.location.pathname === "/collection/") {
+    $('.window').css('background-image', "url('/images/landfillwallpaper.jpeg')");
+} else {
+    $('window').css('background-image', "url('/images/tpbg.gif')")
+}
+
 $('#logout').on('click', logout);

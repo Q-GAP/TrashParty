@@ -15,3 +15,6 @@ landfillButtons.forEach((button) => {
     button.addEventListener("click", landfillAddHandler)
 })
 
+$(window).onload = function() {
+    $('.window').css('background-image', "url('../images/landfillwallpaper.jpg')");
+}

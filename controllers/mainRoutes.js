@@ -7,6 +7,10 @@ router.get('/', async(req, res) => {
     if (req.session.loggedIn) {
         await User.findAll({
             attributes: ['id', 'username', 'lastOpened'],
+            order: [
+                ['updatedAt', 'DESC']
+            ],
+            limit: 5
         }).then((userData) => {
             if (!userData) {
                 res.status(404).json({ message: "No one's at the TrashPARTY YET!! \n or Your data's corrupt. . ." })
@@ -99,28 +103,27 @@ router.get('/dashboard', (req, res) => {
 
 
 router.get('/collection', async(req, res) => {
-        const TP_example = {
-            id: 999999999999999,
-            userId: req.session.userId,
-            trashId: 999999999999999,
-            inLandfill: false,
-            createdAt: "1-07-20T02:06:16.000Z",
-            "updatedAt": "1-07-20T02:06:16.000Z",
-            trash: {
-                id: 99999999999,
-                name: "Example Trash",
-                image: "https://media.giphy.com/media/J6i3kTM5Rrv2cElk6y/giphy.gif",
-                category: "Example",
-                rarity: 1
-            }
+    const TP_example = {
+        id: 999999999999999,
+        userId: req.session.userId,
+        trashId: 999999999999999,
+        inLandfill: false,
+        createdAt: "1-07-20T02:06:16.000Z",
+        "updatedAt": "1-07-20T02:06:16.000Z",
+        trash: {
+            id: 99999999999,
+            name: "Example Trash",
+            image: "https://media.giphy.com/media/J6i3kTM5Rrv2cElk6y/giphy.gif",
+            category: "Example",
+            rarity: 1
         }
+    }
+    try {
         const userTrashList = await UserTrash.findAll({ where: { userId: req.session.userId }, include: [{ model: Trash }] })
         const trashList = userTrashList.map((trash) => trash.get({ plain: true }))
         console.log('\n \n TRASHLIST: \n' + trashList.length + '\n \n')
         if (trashList.length == 0) {
-            console.log('\n \n IF \n \n')
             trashList.push(TP_example)
-            console.log('\n \n UPDATED TRASHLIST: \n \n ' + JSON.stringify(trashList))
             res.render('collection', {
                 loggedIn: req.session.loggedIn,
                 trashList: trashList
@@ -132,10 +135,11 @@ router.get('/collection', async(req, res) => {
                 trashList: trashList
             })
         }
-    }) // catch ((err) => {
-    //     console.log(err);
-    //     res.status(401).redirect('/');
+    } catch (err) {
+        console.log(err);
+        res.status(401).redirect('/');
 
-
+    }
+})
 
 module.exports = router
