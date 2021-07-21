@@ -505,6 +505,10 @@ footer p {
     bottom: 20px;
 }
 
+.btn-floating.halfway-fab.claimBtn {
+    bottom: 20px;
+}
+
 
 /* .trashContainer {
     height: 100%;
