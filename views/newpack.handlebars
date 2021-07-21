@@ -1,0 +1,11 @@
+<section class="newpack">
+    <<h1 class="center">{{username}}'s New Trash!</h1>
+<hr>
+<br>
+<div class="row container">
+    {{#each trashList as |fullTrash|}}
+    {{> listPack}}
+    {{/each}}
+</div>
+<script type="text/javascript" src="/js/collectionHandler.js"></script>
+</section>

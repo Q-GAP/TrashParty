@@ -158,7 +158,7 @@ router.get('/landfill', async(req, res) => {
 router.get('/pack', async(req, res, next) => {
     try {
         if (!req.session.userId) {
-            res.redirect("/login");
+            res.redirect("/");
             return;
         }
         const user = await User.findByPk(req.session.userId)
@@ -179,13 +179,25 @@ router.get('/pack', async(req, res, next) => {
                 })
                 newTrashList.push(givenTrash)
             }
+            const packTrash = await UserTrash.findAll({
+                where: {
+                    userId: req.session.userId,
+                    inLandfill: false,
+                },
+                include: [{
+                    model: Trash,
+                    order: ['updatedAt', 'DESC'],
+                    limit: 5
+                }]
+            })
+            const packList = packTrash.map((trash) => trash.get({ plain: true }))
             if (req.session.userId != 1) {
                 user.lastOpened = Date.now()
             }
-            user.save({ fields: ['lastOpened'] })
-            console.log('\n \n newTrashList: \n \n', newTrashList)
 
-            res.render('newpack', { newTrashList, loggedIn: req.session.loggedIn, user: req.session.username, lastOpened: user.lastOpened })
+            console.log('\n packList: \n', packList)
+            user.save({ fields: ['lastOpened'] })
+            res.render('newpack', { trashList: packList, loggedIn: req.session.loggedIn, username: req.session.username, lastOpened: user.lastOpened })
         } else {
             res.status(200).render('nopack');
         }
