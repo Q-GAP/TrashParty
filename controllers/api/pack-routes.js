@@ -27,7 +27,9 @@ router.get("/", async(req, res) => {
                 })
                 newTrashList.push(givenTrash)
             }
-            user.lastOpened = Date.now()
+            if(req.session.userId != 1) {
+                user.lastOpened = Date.now()
+            }
             user.save({fields: ['lastOpened']})
             res.status(201).json(newTrashList);
         }
