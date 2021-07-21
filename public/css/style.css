@@ -493,6 +493,18 @@ footer p {
     font-size: 1vw;
 }
 
+#materialbox-overlay {
+    z-index: 1001;
+}
+
+.card-image .material-placeholder .active {
+    z-index: 1002 !important;
+}
+
+.btn-floating.halfway-fab.landfillBtn {
+    bottom: 20px;
+}
+
 
 /* .trashContainer {
     height: 100%;
