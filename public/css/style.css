@@ -138,6 +138,7 @@ body {
     font-weight: 300;
     font-size: var(--normalFont);
     overflow-x: hidden;
+    background-color: var(--tp_slate);
 }
 
 
@@ -196,12 +197,13 @@ nav {
     background-color: var(--trashy);
     position: relative;
     padding: 0 2vw;
-    -webkit-text-stroke: .25px black;
-    -webkit-text-fill-color: white;
 }
 
 nav ul a {
     font-size: var(--normalFont) !important;
+    font-weight: 500;
+    -webkit-text-stroke: .25px black;
+    -webkit-text-fill-color: white;
 }
 
 #Trashy {
@@ -219,7 +221,7 @@ nav ul a {
 /* =========== START =========== WINDOW =========== */
 
 .window {
-    background-image: url('https://bafybeiebr2pz4p3itoh7skbdjpzaifrqdujzl2bsibfsi5j3wsra7m7pfq.ipfs.dweb.link/.gif');
+    background-image: url('/images/tpbgoptimize.gif');
     background-size: cover;
     margin: 0 5%;
     padding-top: calc(64px + 1vh);
@@ -477,20 +479,36 @@ footer p {
     background-color: var(--tp_lightgrey);
 }
 
-.rare {
+.Rare {
     box-shadow: 10px 5px 5px rgb(223, 18, 250);
 }
 
-.uncommon {
+.Uncommon {
     box-shadow: 7px 3px 3px rgb(76, 109, 255);
 }
 
-.common {
+.Common {
     box-shadow: 5px 2px 2px rgb(109, 109, 109);
 }
 
 .category {
     font-size: 1vw;
+}
+
+#materialbox-overlay {
+    z-index: 1001;
+}
+
+.card-image .material-placeholder .active {
+    z-index: 1002 !important;
+}
+
+.btn-floating.halfway-fab.landfillBtn {
+    bottom: 20px;
+}
+
+.btn-floating.halfway-fab.claimBtn {
+    bottom: 20px;
 }
 
 
