@@ -58,8 +58,9 @@
                     <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                     <ul id="nav-mobile" class="right hide-on-med-and-down">
                         {{#if loggedIn}}
-                        <li><a href="/landfill/">Landfill</a></li>
-                        <li><a href="/collection/">Collection</a></li>
+                        <li><a href="/">Dashboard</a></li>
+                        <li><a href="/landfill">Landfill</a></li>
+                        <li><a href="/collection">Collection</a></li>
                         <li><a id="logout">Logout</a></li>
                         {{else}}
                         <li><a href="/login/">Login/Signup</a></li>
@@ -69,7 +70,8 @@
             </nav>
             <ul class="sidenav" id="mobile-demo">
                 {{#if loggedIn}}
-                <li class="sn"></li><a href="/landfill">Landfill</a></li>
+                <li class="sn"><a href="/">Dashboard</a></li>
+                <li class="sn"><a href="/landfill">Landfill</a></li>
                 <li class="sn"><a href="/collection">Collection</a></li>
                 <li class="sn"><a id="logout">Logout</a></li>
                 {{else}}

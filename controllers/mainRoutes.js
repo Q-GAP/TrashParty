@@ -6,7 +6,7 @@ const { UserTrash, Trash, User } = require('../models');
 router.get('/', async(req, res) => {
     if (req.session.loggedIn) {
         await User.findAll({
-            attributes: ['id', 'username', 'lastOpened'],
+            attributes: ['id', 'username', 'lastOpened', 'updatedAt'],
             order: [
                 ['updatedAt', 'DESC']
             ],
