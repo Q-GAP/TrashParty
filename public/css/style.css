@@ -477,15 +477,15 @@ footer p {
     background-color: var(--tp_lightgrey);
 }
 
-.rare {
+.Rare {
     box-shadow: 10px 5px 5px rgb(223, 18, 250);
 }
 
-.uncommon {
+.Uncommon {
     box-shadow: 7px 3px 3px rgb(76, 109, 255);
 }
 
-.common {
+.Common {
     box-shadow: 5px 2px 2px rgb(109, 109, 109);
 }
 
@@ -502,6 +502,10 @@ footer p {
 }
 
 .btn-floating.halfway-fab.landfillBtn {
+    bottom: 20px;
+}
+
+.btn-floating.halfway-fab.claimBtn {
     bottom: 20px;
 }
 
