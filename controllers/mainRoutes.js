@@ -119,9 +119,8 @@ router.get('/collection', async(req, res) => {
         }
     }
     try {
-        const userTrashList = await UserTrash.findAll({ where: { userId: req.session.userId }, include: [{ model: Trash }] })
+        const userTrashList = await UserTrash.findAll({ where: { userId: req.session.userId, inLandfill: false }, include: [{ model: Trash }] })
         const trashList = userTrashList.map((trash) => trash.get({ plain: true }))
-        console.log('\n \n TRASHLIST: \n' + trashList.length + '\n \n')
         if (trashList.length == 0) {
             trashList.push(TP_example)
             res.render('collection', {
@@ -129,7 +128,6 @@ router.get('/collection', async(req, res) => {
                 trashList: trashList
             })
         } else {
-            console.log('\n \nELSE \n \n')
             res.render('collection', {
                 loggedIn: req.session.loggedIn,
                 trashList: trashList
@@ -144,22 +142,12 @@ router.get('/collection', async(req, res) => {
 
 router.get('/landfill', async(req, res) => {
     try {
-        const landfillList = await UserTrash.findByPk({ where: { inLandfill: true }, include: [{ model: Trash }] })
-        const landfillList = userTrashList.map((trash) => trash.get({ plain: true }))
-        console.log('\n \n TRASHLIST: \n' + trashList.length + '\n \n')
-        if (trashList.length == 0) {
-            trashList.push(TP_example)
-            res.render('collection', {
+        const landfill = await UserTrash.findAll({ where: { inLandfill: true }, include: [{ model: Trash }] })
+        const landfillList = landfill.map((trash) => trash.get({ plain: true }))
+            res.render('landfill', {
                 loggedIn: req.session.loggedIn,
-                trashList: trashList
+                trashList: landfillList
             })
-        } else {
-            console.log('\n \nELSE \n \n')
-            res.render('collection', {
-                loggedIn: req.session.loggedIn,
-                trashList: trashList
-            })
-        }
     } catch (err) {
         console.log(err);
         res.status(401).redirect('/');

@@ -1,7 +1,7 @@
-const landfillAddHandler = async (event) => {
+const landfillClaimHandler = async (event) => {
     const trashId = event.target.dataset.trashid
     const response = await fetch(`/api/landfill/${trashId}`, {
-        method: "GET",
+        method: "PUT",
         headers: { 'Content-Type': 'application/json' }
     })
     if(response.ok) {
@@ -10,7 +10,7 @@ const landfillAddHandler = async (event) => {
 
 }
 
-const landfillButtons = document.querySelectorAll(".landfillBtn")
-landfillButtons.forEach((button) => {
-    button.addEventListener("click", landfillAddHandler)
+const claimButtons = document.querySelectorAll(".claimBtn")
+claimButtons.forEach((button) => {
+    button.addEventListener("click", landfillClaimHandler)
 })

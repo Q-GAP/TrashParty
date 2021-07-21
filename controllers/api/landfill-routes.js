@@ -18,17 +18,20 @@ router.get('/:id', async (req, res) => {
     }
 })
 
-router.get('/claim/:id', async (req, res) => {
+router.put('/:id', async (req, res) => {
     try {
         const movingTrash = await UserTrash.findByPk(req.params.id)
-        if(req.session.userId) {
+        if(req.session.userId && movingTrash.inLandfill == true) {
             movingTrash.inLandfill = false;
             movingTrash.userId = req.session.userId
             movingTrash.save()
             res.status(200).json(movingTrash);
         }
+        else if(req.session.userId && movingTrash.inLandfill == false){
+            res.status(400).json({message: "Too Slow"})
+        }
         else {
-            res.redirect("/login")
+            res.redirect("/")
         }
     }
     catch (err) {
