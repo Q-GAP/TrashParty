@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { UserTrash, Trash, User } = require('../.vscode/models');
+const { UserTrash, Trash, User } = require('../models');
 
 
 router.get('/', async(req, res) => {
