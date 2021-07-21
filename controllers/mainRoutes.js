@@ -144,15 +144,56 @@ router.get('/landfill', async(req, res) => {
     try {
         const landfill = await UserTrash.findAll({ where: { inLandfill: true }, include: [{ model: Trash }] })
         const landfillList = landfill.map((trash) => trash.get({ plain: true }))
-            res.render('landfill', {
-                loggedIn: req.session.loggedIn,
-                trashList: landfillList
-            })
+        res.render('landfill', {
+            loggedIn: req.session.loggedIn,
+            trashList: landfillList
+        })
     } catch (err) {
         console.log(err);
         res.status(401).redirect('/');
 
     }
 })
+
+router.get('/pack', async(req, res, next) => {
+    try {
+        if (!req.session.userId) {
+            res.redirect("/login");
+            return;
+        }
+        const user = await User.findByPk(req.session.userId)
+        if ((user.lastOpened - Date.now()) >= 43200000 || user.lastOpened == null) {
+            let newTrashList = [];
+            for (i = 0; i < 5; i++) {
+                const rng = (Math.floor(Math.random() * 100) + 1)
+                let rarityNum = 3;
+                if (rng <= 10) {
+                    rarityNum = 1;
+                } else if (rng <= 35) {
+                    rarityNum = 2;
+                }
+                const chosenTrash = await Trash.findOne({ where: { rarity: rarityNum }, order: sequelize.random() })
+                const givenTrash = await UserTrash.create({
+                    userId: req.session.userId,
+                    trashId: chosenTrash.id
+                })
+                newTrashList.push(givenTrash)
+            }
+            if (req.session.userId != 1) {
+                user.lastOpened = Date.now()
+            }
+            user.save({ fields: ['lastOpened'] })
+            console.log('\n \n newTrashList: \n \n', newTrashList)
+
+            res.render('newpack', { newTrashList, loggedIn: req.session.loggedIn, user: req.session.username, lastOpened: user.lastOpened })
+        } else {
+            res.status(200).render('nopack');
+        }
+    } catch (err) {
+        console.log(err)
+        res.status(500).json(err);
+    }
+})
+
 
 module.exports = router
