@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrashParty</title>
+    <!-- jquery cdn -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <!-- fontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <!-- Google fonts cdn -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/materialize.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+      <script id="text-template" type="text/x-handlebars-template">
+    <br>#if_eq name Foo (expected true)
+    {{#if_eq name 'Foo'}}
+      true
+    {{else}}
+      false
+    {{/if_eq}}
+    
+    <br>#if_eq name 'Bar' (expected false)
+    {{#if_eq name 'Bar'}}
+       true
+    {{else}}
+       false
+    {{/if_eq}}
+  </script>
+
+  {{!-- Favicon Stuff --}}
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="apple-mobile-web-app-title" content="TrashParty">
+<meta name="application-name" content="TrashParty">
+<meta name="msapplication-TileColor" content="#0c6800">
+<meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+    <!-- #region Header -->
+    <section class="lfPic">
+        <header>
+            <nav>
+                <div class="nav-wrapper">
+                    <a href="/" class="brand brand-logo">Trash<span class="twoTone">Party</span></a>
+                    <a href="/"><img class="center" id="Trashy" src="/images/Trashy.png">
+                    </a>
+                    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        {{#if loggedIn}}
+                        <li><a href="/">Dashboard</a></li>
+                        <li><a href="/landfill">Landfill</a></li>
+                        <li><a href="/collection">Collection</a></li>
+                        <li><a id="logout">Logout</a></li>
+                        {{else}}
+                        <li><a href="/login/">Login/Signup</a></li>
+                        {{/if}}
+                    </ul>
+                </div>
+            </nav>
+            <ul class="sidenav" id="mobile-demo">
+                {{#if loggedIn}}
+                <li class="sn"><a href="/">Dashboard</a></li>
+                <li class="sn"><a href="/landfill">Landfill</a></li>
+                <li class="sn"><a href="/collection">Collection</a></li>
+                <li class="sn"><a id="logout">Logout</a></li>
+                {{else}}
+                <li class="sn"><a href="/login">Login</a></li>
+                <li class="sn"><a href="/login">Sign Up</a></li>
+                {{/if}}
+            </ul>
+        </header>
+    </section>
+    <!-- #endregion -->
+    <main>
+        
+{{!-- <div class="bg-img"> --}}
+        <div class="window">
+
+            {{#if body}}
+            {{{body}}}
+            {{/if}}
+
+        </div>
+        {{!-- </div> --}}
+    </main>
+    <!-- #region FOOTER -->
+    <section class="lfPic--footer">
+        <footer class="center sticky">
+            <div class="footer--trashroutes">
+                <p>
+                    <a href="/" class="brand">Trash<span class="twoTone">Party</span></a>
+                    {{#if loggedIn}} |
+                    <a href="/dashboard">Dashboard</a>
+                   {{else}} 
+                   | <a href="/login">Login</a> | <a href="/login/">SignUp</a>
+                   {{/if}}
+                </p>
+            </div>
+            <div class="footer--links">
+                <p class="bottom"> <strong class="brand">Trash<span class="twoTone">Party</span></strong> by <a href="https://github.com/Q-GAP/">Q-GAP</a> | Check Out the Code:
+                    <a href="https://github.com/Q-GAP/TrashParty"><i class="fab fa-github"> </i>Trash Source</a> |
+                    <a href="mailto:support@peterroto.com"><i class="far fa-envelope"> </i> Email Us</a>
+                    <div class="copyright" align="center">
+                        <script>
+                            document.write('&copy;');
+                            document.write(' 2021 - ');
+                            document.write(new Date().getFullYear());
+                            document.write(' QGAP - All Rights Reserved.');
+                        </script>
+                    </div>
+                </p>
+            </div>
+        </footer>
+  
+    <!-- endregion -->
+    <!-- #region JS -->
+    <!-- Compiled and minified JavaScript -->
+
+    <!-- endregion -->
+      </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="/js/index.js"></script>
+</body>
+
+</html>

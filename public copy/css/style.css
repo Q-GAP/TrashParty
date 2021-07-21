@@ -1,0 +1,553 @@
+:root {
+    --trashy: #0c68004d;
+    --trashy-dingy: #0c680071;
+    --ratty: #79b804b7;
+    /* Quanisha's Theme */
+    --tp_red: #8F0000;
+    --tp_slate: #28393E;
+    --tp_tan: #8B5D2F;
+    --tp_lavendar: #976E8C;
+    --tp_yellow: #F4AE3E;
+    --tp_teal: #79a497c2;
+    --tp_lightgrey: #B5BAB5;
+    --testBG1: #faab00a1;
+    --testBG1: #00e1ff9a;
+    --border-radius: 0.3rem;
+    --largestFont: calc(18px + 0.85vw);
+    --largeFont: calc(14px + .75vw);
+    --normalFont: calc(12px + 0.5vw);
+    --smallFont: calc(9px + 0.698vw);
+    --tinyFont: calc(6px + 0.698vw);
+    /* The character count on */
+    --smallLineHeight: calc(var(--smallFont) * 1.4);
+    --normallLineHeight: calc(var(--normalFont)*1.4);
+    --largelLineHeight: calc(var(--largeFont)* 1.4);
+    --largestlLineHeight: calc(var(--largestFont)* 1.4);
+    --letterSpacing: calc(var(--fontSize) * 0.0015);
+    --fontWeight: 300;
+}
+
+.dots-bars-6 {
+    display: none;
+    width: 40px;
+    height: 20px;
+    --c: radial-gradient(farthest-side, currentColor 93%, #0000);
+    background: var(--c) 0 0, var(--c) 50% 0;
+    background-size: 8px 8px;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    clip-path: inset(-200% -100% 0 0);
+    animation: db6-0 1.5s linear infinite;
+    box-sizing: border-box;
+}
+
+.dots-bars-6:before {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 12px;
+    background: currentColor;
+    left: -16px;
+    top: 0;
+    animation: db6-1 1.5s linear infinite, db6-2 0.5s cubic-bezier(0, 200, .8, 200) infinite;
+}
+
+.dots-bars-6:after {
+    content: "";
+    position: absolute;
+    top: 50;
+    left: 50;
+    inset: 0 0 auto auto;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: currentColor;
+    animation: db6-3 1.5s linear infinite;
+}
+
+@keyframes db6-0 {
+    0%,
+    30% {
+        background-position: 0 0, 50% 0
+    }
+    33% {
+        background-position: 0 100%, 50% 0
+    }
+    41%,
+    63% {
+        background-position: 0 0, 50% 0
+    }
+    66% {
+        background-position: 0 0, 50% 100%
+    }
+    74%,
+    100% {
+        background-position: 0 0, 50% 0
+    }
+}
+
+@keyframes db6-1 {
+    90% {
+        transform: translateY(0)
+    }
+    95% {
+        transform: translateY(15px)
+    }
+    100% {
+        transform: translateY(15px);
+        left: calc(100% - 8px)
+    }
+}
+
+@keyframes db6-2 {
+    100% {
+        top: -0.1px
+    }
+}
+
+@keyframes db6-3 {
+    0%,
+    80%,
+    100% {
+        transform: translate(0)
+    }
+    90% {
+        transform: translate(26px)
+    }
+}
+
+.testBG1 {
+    background-color: var(--testBG1)
+}
+
+.testBG2 {
+    background-color: var(--testBG2)
+}
+
+.trashy {
+    background-color: var(--ratty);
+}
+
+body {
+    width: 100vw;
+    height: auto;
+    font-family: 'Roboto', 'Segoe UI', sans-serif;
+    font-weight: 300;
+    font-size: var(--normalFont);
+    overflow-x: hidden;
+}
+
+
+/* =========== START =========== SPECIALTY =========== ITEMS */
+
+.author {
+    font-weight: 100;
+}
+
+.tp-text-grey {
+    color: var(--tp_lightgrey);
+    -webkit-text-stroke: .5px var(--tp_slate);
+}
+
+.tp-text-purple {
+    color: var(--tp_purple);
+}
+
+.tp-text-slate {
+    color: var(--tp_slate);
+}
+
+h3.twoTone span {
+    font-style: italic;
+    font-weight: 200;
+}
+
+.twoTone {
+    font-weight: 800;
+    color: black !important;
+    -webkit-text-stroke: .5px rgb(250, 250, 250);
+    -webkit-text-fill-color: rgb(0, 0, 0);
+}
+
+
+/* =========== END =========== SPECIALTY =========== ITEMS */
+
+
+/* =========== START =========== HEADER ===== & ====== NAV */
+
+.lfPic {
+    background-image: url('../images/TrashPartyBanner.png');
+    /* position: absolute; */
+}
+
+.lfPic,
+header {
+    position: fixed;
+    height: 64px;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav {
+    background-color: var(--trashy);
+    position: relative;
+    padding: 0 2vw;
+}
+
+nav ul a {
+    font-size: var(--normalFont) !important;
+    font-weight: 500;
+    -webkit-text-stroke: .25px black;
+    -webkit-text-fill-color: white;
+}
+
+#Trashy {
+    position: absolute;
+    height: 58px;
+    transform: translateX(-50%);
+    width: auto;
+    left: 50%;
+}
+
+
+/* =========== END =========== HEADER ===== & ===== NAV */
+
+
+/* =========== START =========== WINDOW =========== */
+
+.window {
+    background-image: url('/images/tpbgoptimize.gif');
+    background-size: cover;
+    margin: 0 5%;
+    padding-top: calc(64px + 1vh);
+    padding-left: 3vw;
+    padding-right: 3vw;
+    padding-bottom: calc(90px +1vw);
+    width: 90%;
+    /* height: 100vh; */
+    height: 100%;
+    min-height: 100vh;
+    overflow: scroll;
+}
+
+
+/* .bg-img {
+    width: 100%;
+    height: 100%;
+    background: url('/images/tpbg.gif') center center no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(to bottom, #B5BAB5, #28393E);
+    opacity: .5;
+} */
+
+.sidenav {
+    top: unset;
+    position: fixed;
+    z-index: 9999 !important;
+}
+
+
+/* Get Materialzejs to work with handlebars */
+
+.sidenav-overlay {
+    position: unset !important;
+    background-color: transparent !important;
+    height: 0 !important;
+    width: 0 !important;
+}
+
+
+/* =========== END =========== WINDOW =========== */
+
+
+/* =========== START =========== SPLASH =========== */
+
+#splash {
+    width: 100%;
+    height: 60%;
+    /* background-color: var(--ratty); */
+    font-weight: bold;
+    text-align: center;
+}
+
+#splash h1 {
+    -webkit-text-stroke: .5px #28393E;
+}
+
+.TrashCollectors {
+    background-color: var(--tp_slate);
+    border: 1px solid var(--tp_red);
+    margin: 2vh 1vw;
+}
+
+.TrashCollectors .header {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.inline-Trashy {
+    max-width: 7%;
+    display: inline-block;
+    vertical-align: middle;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.splash-container {
+    background-color: var(--tp_teal);
+}
+
+.splash-container>h2 {
+    padding-top: 1vh;
+}
+
+.splash-container .col,
+.splash-container .row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.fiveCard .card-title {
+    background-color: var(--tp_slate);
+    font-size: var(--largeFont);
+    font-variant: small-caps;
+    padding: auto 2vw;
+}
+
+.fiveCard .card-title i {
+    float: right;
+    margin: 1vh;
+}
+
+.fiveCard .card-content {
+    border: 1px solid var(--tp_slate);
+}
+
+.fiveCard-logo {
+    max-width: 50%;
+    margin: 0 auto;
+    height: auto;
+}
+
+.fiveWall {
+    flex: 1 1 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+
+/* =========== END =========== SPLASH =========== */
+
+
+/* =========== START =========== LOGIN =========== */
+
+hr,
+.btn {
+    color: black !important;
+}
+
+img.activator {
+    flex: 0 1 60%;
+    padding: .5rem 2rem 0;
+    /* z-index: 100 !important; */
+}
+
+.quickPick {
+    position: absolute;
+    /* top: 80px; */
+    left: 0;
+    width: 100%;
+    margin: 30% 0;
+}
+
+.card-content span,
+.card-content span i {
+    font-size: var(--largestFont) !important;
+    font-weight: bold !important;
+}
+
+.login-signup {
+    padding-top: 70px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    column-gap: calc(5rem * 1.5)
+}
+
+.login-signup a {
+    /* display: none; */
+    margin: 0;
+    flex: 0 1 20%;
+}
+
+.login.card,
+.signup.card {
+    background-color: var(--ratty);
+    flex: 0 0 300px;
+    margin: 5% 0;
+    /* mix-blend-mode: normal; */
+}
+
+
+/* =========== END =========== LOGIN =========== */
+
+
+/* =========== START =========== FOOTER =========== */
+
+.lfPic--footer {
+    background-image: url('../images/TrashPartyBanner.png');
+    object-fit: stretch;
+    height: 90px;
+}
+
+footer,
+.lfPic--footer {
+    position: fixed;
+    height: 90px;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000 !important;
+}
+
+footer {
+    background-color: var(--trashy-dingy);
+}
+
+footer p {
+    margin: 0 0;
+}
+
+.footer--links a,
+.footer--trashroutes a {
+    color: white;
+    text-decoration: none;
+    -webkit-text-stroke: .25px rgb(0, 0, 0);
+    -webkit-text-fill-color: rgb(255, 255, 255);
+    font-weight: 600;
+}
+
+.footer--trashroutes {
+    line-height: var(--smallLineHeight);
+    font-size: var(--smallFont);
+    -webkit-text-stroke: .25px rgb(0, 0, 0);
+    -webkit-text-fill-color: rgb(255, 255, 255);
+}
+
+.footer--links {
+    color: white;
+    font-size: var(--tinyFont);
+    /* -webkit-text-stroke: .25px rgb(0, 0, 0); */
+    -webkit-text-fill-color: rgb(255, 255, 255);
+}
+
+.footer--links a:hover,
+.footer--trashroutes a:hover {
+    text-shadow: 2px 2px 4px #ff38ee;
+}
+
+.copyright#text {
+    font-weight: 200;
+    margin-top: 0;
+    -webkit-text-stroke: unset;
+}
+
+.bottom {
+    margin-bottom: 0;
+}
+
+
+/* =========== END =========== FOOTER =========== */
+
+
+/* =========== START =========== TRASHCARDS =========== */
+
+.trashCard .card-image {
+    height: 10em;
+    /* Your height here */
+    overflow: hidden;
+    background-color: var(--tp_lightgrey);
+}
+
+.Rare {
+    box-shadow: 10px 5px 5px rgb(223, 18, 250);
+}
+
+.Uncommon {
+    box-shadow: 7px 3px 3px rgb(76, 109, 255);
+}
+
+.Common {
+    box-shadow: 5px 2px 2px rgb(109, 109, 109);
+}
+
+.category {
+    font-size: 1vw;
+}
+
+#materialbox-overlay {
+    z-index: 1001;
+}
+
+.card-image .material-placeholder .active {
+    z-index: 1002 !important;
+}
+
+.btn-floating.halfway-fab.landfillBtn {
+    bottom: 20px;
+}
+
+.btn-floating.halfway-fab.claimBtn {
+    bottom: 20px;
+}
+
+
+/* .trashContainer {
+    height: 100%;
+    overflow: scroll;
+} */
+
+
+/* =========== END =========== TRASHCARDS =========== */
+
+
+/* =========== START =========== MEDIAQUERIES =========== */
+
+@media only screen and (max-width:1000px) {
+    .brand-logo {
+        display: none !important;
+    }
+    .trashCard .card-image {
+        height: 12em;
+    }
+    .category {
+        font-size: 1.5vw;
+    }
+}
+
+@media only screen and (max-width:768px) {
+    .trashCard .card-image {
+        height: 15em;
+    }
+    .trashCard .category {
+        font-size: 2.5vw
+    }
+    .login-signup {
+        padding-top: 2.5vh;
+        column-gap: 5rem;
+    }
+    .login-signup a {
+        display: inline-flex;
+        margin: 0;
+        flex: 0 1 20%;
+    }
+}

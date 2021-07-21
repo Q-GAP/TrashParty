@@ -1,0 +1,14 @@
+# dev/
+dev
+
+# node_modules
+node_modules
+
+# .VSCode
+.vscode
+
+# dotenv
+.env
+
+# packag-lock
+package-lock.json
