@@ -219,7 +219,7 @@ nav ul a {
 /* =========== START =========== WINDOW =========== */
 
 .window {
-    background-image: url('/images/tpbg.gif');
+    background-image: url('https://bafybeiebr2pz4p3itoh7skbdjpzaifrqdujzl2bsibfsi5j3wsra7m7pfq.ipfs.dweb.link/.gif');
     background-size: cover;
     margin: 0 5%;
     padding-top: calc(64px + 1vh);
