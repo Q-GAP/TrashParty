@@ -1,32 +1,13 @@
  <div class="trashCard col s12 m6 l4">
-      <div class="card teal
-      {{#if (if_eq trash.rarity 1)}}
-      rare
-      {{/if}}
-      {{#if (if_eq trash.rarity 2)}}
-      uncommon
-      {{/if}}
-      {{#if (if_eq trash.rarity 3)}}
-      common
-      {{/if}}">
+      <div class="card teal {{rarityCheck trash.rarity}}"> 
         <div class="card-image teal">
           <img class="trashImage{{id}} materialboxed" src="{{stillGif trash.image}}">
           <span class="card-title">{{trash.name}}</span>
         </div>
         <div class="card-content">
           <p class="category">Category: {{trash.category}}</p>
-          <p class="category">
-      {{#if (if_eq trash.rarity 1)}}
-      Rare
-      {{/if}}
-      {{#if (if_eq trash.rarity 2)}}
-      Uncommon
-      {{/if}}
-      {{#if (if_eq trash.rarity 3)}}
-      Common
-      {{/if}}
-          </p>
-          <a class="btn-floating tooltipped halfway-fab green claimBtn" data-trashId="{{id}}" data-position="bottom" data-tooltip="Claim Trash"><i class="material-icons" data-trashId="{{id}}">get_app</i></a>
+          <p>{{rarityCheck trash.rarity}}</p>
+          <a class="btn-floating tooltipped halfway-fab teal landfillBtn" data-trashId="{{id}}" data-position="bottom" data-tooltip="Throw in Landfill"><i class="material-icons" data-trashId="{{id}}">delete_forever</i></a>
         </div>
       </div>
     </div>
