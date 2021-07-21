@@ -22,6 +22,17 @@ module.exports = {
     },
     stillGif: (gif) => {
         return gif.replace("200.gif", "200_s.gif")
+    },
+    rarityCheck: (rarityNum) => {
+        if(rarityNum == 1) {
+            return "Rare";
+        }
+        else if (rarityNum == 2) {
+            return "Uncommon";
+        }
+        else {
+            return "Common";
+        }
     }
 }
 
