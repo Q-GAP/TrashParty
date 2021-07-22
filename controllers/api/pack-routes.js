@@ -25,13 +25,18 @@ router.get("/", async(req, res) => {
                     userId: req.session.userId,
                     trashId: chosenTrash.id
                 })
-                newTrashList.push(givenTrash)
+                const fullTrash = await UserTrash.findByPk(givenTrash.id, {
+                    include: [{model: Trash}]
+                })
+                newTrashList.push(fullTrash)
             }
             if(req.session.userId != 1) {
                 user.lastOpened = Date.now()
             }
             user.save({fields: ['lastOpened']})
-            res.status(201).json(newTrashList);
+            newTrashList = newTrashList.map((trash) => trash.get({plain: true}))
+            console.log(newTrashList)
+            res.status(200).json(newTrashList)
         }
         else {
             res.status(405).json({message: "Pack Unavailable"})
