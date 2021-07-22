@@ -119,7 +119,9 @@ router.get('/collection', async(req, res) => {
         }
     }
     try {
-        const userTrashList = await UserTrash.findAll({ where: { userId: req.session.userId, inLandfill: false }, include: [{ model: Trash }] })
+        const userTrashList = await UserTrash.findAll({ where: { userId: req.session.userId, inLandfill: false }, include: [{ model: Trash }], order: [
+            ['updatedAt', 'DESC']
+        ] })
         const trashList = userTrashList.map((trash) => trash.get({ plain: true }))
         if (trashList.length == 0) {
             trashList.push(TP_example)
@@ -144,7 +146,9 @@ router.get('/collection', async(req, res) => {
 
 router.get('/landfill', async(req, res) => {
     try {
-        const landfill = await UserTrash.findAll({ where: { inLandfill: true }, include: [{ model: Trash }] })
+        const landfill = await UserTrash.findAll({ where: { inLandfill: true }, include: [{ model: Trash }, {model: User, attributes: ["username"]}], order: [
+            ['updatedAt', 'DESC']
+        ] })
         const landfillList = landfill.map((trash) => trash.get({ plain: true }))
         res.render('landfill', {
             loggedIn: req.session.loggedIn,
@@ -166,7 +170,7 @@ router.get('/pack', async(req, res) => {
         const user = await User.findByPk(req.session.userId)
         if ((user.lastOpened - Date.now()) >= 43200000 || user.lastOpened == null) {
             let newTrashList = [];
-            for (i = 0; i < 5; i++) {
+            for(i = 0; i < 6; i++) {
                 const rng = (Math.floor(Math.random() * 100) + 1)
                 let rarityNum = 3;
                 if (rng <= 10) {

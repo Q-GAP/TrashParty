@@ -5,9 +5,10 @@ const landfillClaimHandler = async (event) => {
         headers: { 'Content-Type': 'application/json' }
     })
     if(response.ok) {
-        document.location.reload()
+        setTimeout(function() {
+            window.location.reload()
+        }, 100)
     }
-
 }
 
 const claimButtons = document.querySelectorAll(".claimBtn")
