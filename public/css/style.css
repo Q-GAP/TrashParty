@@ -52,6 +52,10 @@ body {
 
 /* =========== START =========== SPECIALTY =========== ITEMS */
 
+.fa {
+    font-size: var(--largeFont) !important;
+}
+
 .dropdown-content {
     padding: 5px !important;
     width: 50vw !important;
