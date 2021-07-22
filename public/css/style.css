@@ -477,7 +477,7 @@ footer p {
 
 /* =========== START =========== NEWPACK =========== */
 
-.newpack h1 {
+.newpack h2 {
     color: var(--tp_lightgrey);
     -webkit-text-stroke: .5px var(--tp_slate);
 }
