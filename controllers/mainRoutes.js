@@ -125,12 +125,14 @@ router.get('/collection', async(req, res) => {
             trashList.push(TP_example)
             res.render('collection', {
                 loggedIn: req.session.loggedIn,
-                trashList: trashList
+                trashList: trashList,
+                username: req.session.username
             })
         } else {
             res.render('collection', {
                 loggedIn: req.session.loggedIn,
-                trashList: trashList
+                trashList: trashList,
+                username: req.session.username
             })
         }
     } catch (err) {
@@ -157,45 +159,42 @@ router.get('/landfill', async(req, res) => {
 
 router.get('/pack', async(req, res) => {
     try {
-        if(!req.session.userId) {
+        if (!req.session.userId) {
             res.redirect("/login");
             return;
         }
         const user = await User.findByPk(req.session.userId)
-        if((user.lastOpened - Date.now()) >= 43200000 || user.lastOpened == null) {
+        if ((user.lastOpened - Date.now()) >= 43200000 || user.lastOpened == null) {
             let newTrashList = [];
             for(i = 0; i < 6; i++) {
                 const rng = (Math.floor(Math.random() * 100) + 1)
                 let rarityNum = 3;
-                if(rng <= 10) {
+                if (rng <= 10) {
                     rarityNum = 1;
-                }
-                else if(rng <= 35) {
+                } else if (rng <= 35) {
                     rarityNum = 2;
                 }
-                const chosenTrash = await Trash.findOne({ where: {rarity: rarityNum}, order: sequelize.random()})
+                const chosenTrash = await Trash.findOne({ where: { rarity: rarityNum }, order: sequelize.random() })
                 const givenTrash = await UserTrash.create({
                     userId: req.session.userId,
                     trashId: chosenTrash.id
                 })
                 const fullTrash = await UserTrash.findByPk(givenTrash.id, {
-                    include: [{model: Trash}]
+                    include: [{ model: Trash }]
                 })
                 newTrashList.push(fullTrash)
             }
-            if(req.session.userId != 1) {
+            if (req.session.userId != 1) {
                 user.lastOpened = Date.now()
             }
-            user.save({fields: ['lastOpened']})
-            newTrashList = newTrashList.map((trash) => trash.get({plain: true}))
+            user.save({ fields: ['lastOpened'] })
+            newTrashList = newTrashList.map((trash) => trash.get({ plain: true }))
             console.log(newTrashList)
-            res.render('newpack', {trashList: newTrashList, loggedIn: req.session.loggedIn, username: user.username})
+            res.render('newpack', { trashList: newTrashList, loggedIn: req.session.loggedIn, username: user.username })
+        } else {
+            res.render('nopack', { loggedIn: req.session.loggedIn })
         }
-        else {
-            res.render('nopack', {loggedIn: req.session.loggedIn})
-        }
-    }
-    catch (err) {
+    } catch (err) {
         console.log(err)
         res.status(500).json(err);
     }
