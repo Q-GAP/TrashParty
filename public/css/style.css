@@ -249,13 +249,14 @@ opacity: .5;
 
 .fiveCard .card-title {
     background-color: var(--tp_slate);
-    font-size: var(--largeFont);
+    font-size: var(--normalFont);
     font-variant: small-caps;
     padding: auto 2vw;
 }
 
 .fiveCard .card-title i {
     float: right;
+    vertical-align: top;
     margin: 1vh;
 }
 
@@ -419,9 +420,19 @@ footer p {
     -webkit-text-fill-color: rgb(255, 255, 255);
 }
 
-.footer--links a:hover,
-.footer--trashroutes a:hover {
-    text-shadow: 2px 2px 4px #ff38ee;
+a {
+    transition: transform 0.5s ease;
+}
+
+
+/* a[text], */
+
+a:not(.btn):hover,
+a:not(.btn-floating):hover {
+    /* text-shadow: 2px 2px 4px #ff38ee; */
+    text-shadow: -1px -1px 1px #ff38ee;
+    z-index: 3;
+    transform: perspective(500px) rotateY(-5deg) rotateX(5deg) translateZ(1em);
 }
 
 .copyright#text {
