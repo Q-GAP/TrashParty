@@ -214,6 +214,10 @@ nav ul a {
     left: 50%;
 }
 
+#startGIF {
+    display: none;
+}
+
 
 /* =========== END =========== HEADER ===== & ===== NAV */
 
@@ -221,18 +225,19 @@ nav ul a {
 /* =========== START =========== WINDOW =========== */
 
 .window {
-    background-image: url('../images/tpbgoptimize.gif');
+    background-image: url('https://bafybeiebr2pz4p3itoh7skbdjpzaifrqdujzl2bsibfsi5j3wsra7m7pfq.ipfs.dweb.link/');
+    background-color: var(--tp_lightgrey);
     background-size: cover;
     margin: 0 5%;
     padding-top: calc(64px + 1vh);
     padding-left: 3vw;
     padding-right: 3vw;
-    padding-bottom: calc(90px +1vw);
+    padding-bottom: calc(90px + 1vh);
     width: 90%;
     /* height: 100vh; */
     height: 100%;
     min-height: 100vh;
-    overflow: scroll;
+    overflow: auto;
 }
 
 
@@ -470,7 +475,29 @@ footer p {
 /* =========== END =========== FOOTER =========== */
 
 
+/* =========== START =========== NEWPACK =========== */
+
+section h2 {
+    padding: 2.5vw 0;
+    margin: 0;
+    background-color: rgba(0, 0, 0, 0.603);
+    color: white;
+    -webkit-text-stroke: .5px var(--tp_slate);
+}
+
+section hr {
+    margin-top: 0;
+}
+
+
+/* =========== END =========== NEWPACK =========== */
+
+
 /* =========== START =========== TRASHCARDS =========== */
+
+.trashcard .card-title {
+    font-size: var(--normalFont);
+}
 
 .trashCard .card-image {
     height: 10em;
