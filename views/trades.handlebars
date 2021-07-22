@@ -1,0 +1,11 @@
+<section class="trades">
+<h2 class="center">Trades</h2>
+<hr>
+<div class="row">
+    {{#each tradeRequests as |request|}}
+    {{> listRequests}}
+    {{/each}}
+</div>
+</section>
+
+<script src="/js/tradeHandler.js"></script>

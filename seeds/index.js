@@ -2,6 +2,7 @@ const sequelize = require('../config/connection')
 const seedUsers = require("./usersData")
 const seedTrash = require("./trashData")
 const seedUsersTrash = require("./usersTrashData")
+const seedTrades = require("./tradeData")
 const seedAllGifs = require("./gifdata")
 
 const seedBase = async () => {
@@ -12,6 +13,8 @@ const seedBase = async () => {
 
     await seedUsersTrash();
 
+    await seedTrades();
+
 }
 
 const seedAll = async () => {
@@ -20,7 +23,7 @@ const seedAll = async () => {
 
     await seedBase()
 
-    await seedAllGifs()
+    // await seedAllGifs()
 
 
 }
