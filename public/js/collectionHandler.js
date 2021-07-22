@@ -1,10 +1,10 @@
-const landfillAddHandler = async (event) => {
+const landfillAddHandler = async(event) => {
     const trashId = event.target.dataset.trashid
     const response = await fetch(`/api/landfill/${trashId}`, {
         method: "GET",
         headers: { 'Content-Type': 'application/json' }
     })
-    if(response.ok) {
+    if (response.ok) {
         document.location.reload()
     }
 
