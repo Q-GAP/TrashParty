@@ -5,9 +5,10 @@ const landfillAddHandler = async (event) => {
         headers: { 'Content-Type': 'application/json' }
     })
     if(response.ok) {
-        document.location.reload()
+        setTimeout(function() {
+            window.location.reload()
+        }, 100)
     }
-
 }
 
 const landfillButtons = document.querySelectorAll(".landfillBtn")

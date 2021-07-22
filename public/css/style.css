@@ -226,7 +226,7 @@ nav ul a {
     padding-top: calc(64px + 1vh);
     padding-left: 3vw;
     padding-right: 3vw;
-    padding-bottom: calc(90px +1vw);
+    padding-bottom: calc(90px + 1vw);
     width: 90%;
     /* height: 100vh; */
     height: 100%;
@@ -490,8 +490,12 @@ footer p {
     box-shadow: 5px 2px 2px rgb(109, 109, 109);
 }
 
-.category {
+.cardText {
     font-size: 1vw;
+}
+
+.tossedBy {
+    font-size: 0.75vw;
 }
 
 #materialbox-overlay {
