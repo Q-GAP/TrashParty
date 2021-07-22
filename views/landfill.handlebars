@@ -1,6 +1,22 @@
 <section>
     
-<h2 class="center">Welcome to the Landfill</h2>
+<h2 class="center">Welcome to the Landfill   <a title="click me" class='dropdown-trigger' href='#' data-target='dropdown1'>
+        <i class="white-text fa fa-info-circle" aria-hidden="true"></i>
+    </a>
+
+  <!-- Dropdown Structure -->
+  <ul id='dropdown1' class='dropdown-content'>
+    <li class="flow-text"><i>One man's trash is another man's trash</i>. 😬 -or something like that.
+    <br><br> 
+    If you see some garbage that you like-- ACT FAST; because they don't stay long. 
+    <br><br>
+    Click on the <i>add to collection</i> button on a card to . . . well, add it to your <i><a href="/collection"> collection.</a></i>
+    <br><br>
+    🔥 Unclaimed landfill items will be incinerated  after 24hrs. 🔥<br><br> . . . stay trashy
+    </li>
+   
+  </ul>
+  </h2>
 <hr>
 <div class="row container">
     {{#each trashList as |fullTrash|}}

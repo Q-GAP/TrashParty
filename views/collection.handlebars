@@ -1,6 +1,13 @@
 <section>
     <a href="/"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
-<h2 class="center">{{username}}'s Trash</h2>
+<h2 class="center">{{username}}'s Trash <a title="WTF?" class='dropdown-trigger' href='#' data-target='dropdown1'><i class="white-text fa fa-info-circle" aria-hidden="true"></i></a>
+
+  <!-- Dropdown Structure -->
+  <ul id='dropdown1' class='dropdown-content'>
+    <li class="flow-text">Where Trash Found? <br>Right here in your collection. This is YOUR trash!!! You've earned it, through your hours of waiting.<br> Keep  your cards to show friends and loved ones (<i>click on the delete button to banish the item to the <a href="/landfill">landfill</a> and let other Trashy People scoop 'em up).</i> Just Click on the GIF to see it LARGER THAN LIFE!! Have fun and always Stay Trashy </li>
+   
+  </ul></h2>
+
 <hr>
 <div class="row container">
     {{#each trashList as |fullTrash|}}
