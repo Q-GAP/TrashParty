@@ -138,6 +138,7 @@ body {
     font-weight: 300;
     font-size: var(--normalFont);
     overflow-x: hidden;
+    background-color: var(--tp_slate);
 }
 
 
@@ -213,6 +214,10 @@ nav ul a {
     left: 50%;
 }
 
+#startGIF {
+    display: none;
+}
+
 
 /* =========== END =========== HEADER ===== & ===== NAV */
 
@@ -220,7 +225,8 @@ nav ul a {
 /* =========== START =========== WINDOW =========== */
 
 .window {
-    background-image: url('/images/tpbgoptimize.gif');
+    background-image: url('https://bafybeiebr2pz4p3itoh7skbdjpzaifrqdujzl2bsibfsi5j3wsra7m7pfq.ipfs.dweb.link/');
+    background-color: var(--tp_lightgrey);
     background-size: cover;
     margin: 0 5%;
     padding-top: calc(64px + 1vh);
@@ -469,7 +475,22 @@ footer p {
 /* =========== END =========== FOOTER =========== */
 
 
+/* =========== START =========== NEWPACK =========== */
+
+.newpack h1 {
+    color: var(--tp_lightgrey);
+    -webkit-text-stroke: .5px var(--tp_slate);
+}
+
+
+/* =========== END =========== NEWPACK =========== */
+
+
 /* =========== START =========== TRASHCARDS =========== */
+
+.trashcard .card-title {
+    font-size: var(--normalFont);
+}
 
 .trashCard .card-image {
     height: 10em;
