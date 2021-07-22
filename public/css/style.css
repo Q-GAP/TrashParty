@@ -232,12 +232,12 @@ nav ul a {
     padding-top: calc(64px + 1vh);
     padding-left: 3vw;
     padding-right: 3vw;
-    padding-bottom: calc(90px +1vw);
+    padding-bottom: calc(90px + 1vh);
     width: 90%;
     /* height: 100vh; */
     height: 100%;
     min-height: 100vh;
-    overflow: scroll;
+    overflow: auto;
 }
 
 
@@ -477,9 +477,16 @@ footer p {
 
 /* =========== START =========== NEWPACK =========== */
 
-.newpack h2 {
-    color: var(--tp_lightgrey);
+section h2 {
+    padding: 2.5vw 0;
+    margin: 0;
+    background-color: rgba(0, 0, 0, 0.603);
+    color: white;
     -webkit-text-stroke: .5px var(--tp_slate);
+}
+
+section hr {
+    margin-top: 0;
 }
 
 
