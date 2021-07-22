@@ -13,6 +13,7 @@ const landfillUpdate = async () => {
     if(landfillList.length > 100) {
         while(landfillList > 100) {
             landfillList[(landfillList.length - 1)].destroy()
+            landfillList.pop()
         }
     }
     return;
