@@ -29,6 +29,14 @@
   
   ## Usage 🖱️
 ---
+  1. Upon entering the TrashParty click on Login/Signup in the upper right corner of the page.
+  2. If this is your first time using this app click Sign Up and enter your credentials or proceed to Login if already signed up.
+  3. Once logged in you will be brought to the homepage where you can view the most Recnt Trash Collectors who logged into the app. 
+  4. From there you can use the nav links in the upper right corner of the page and even click Stop GIF Background to do just that.
+  5. The Dashboard will allow you to open your pack to see what what trash (treasure) you have uncovered. 
+  6. From the Dashboard, as well as the nav bar, you can also view your Collection page which lists all trash you have opened up or retireved from the Landfill. Here you can dump any of your trash into the Landfill.
+  7. The Landfill can also be accessed from your Dashboard and nav bar. This is where you can add any of the seeded trash to your Collection.
+  8. The TrashParty name and "Trashy" the Trash Panda mascot can be clicked to direct you to the homepage. Info circles on each page can also be clicked for further explanation of the page. 
 
   
   
