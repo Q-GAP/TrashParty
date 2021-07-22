@@ -10,7 +10,7 @@ const landfillUpdate = async () => {
             trash.destroy()
         }
     })
-    if(landfillList.length >= 100) {
+    if(landfillList.length > 100) {
         landfillList[(landfillList.length - 1)].destroy()
     }
     console.log(landfillList.length)
