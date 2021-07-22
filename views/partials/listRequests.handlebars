@@ -1,0 +1,57 @@
+<div class="col s12 m6 card blue tradeCard">
+    <div class="row">
+        <div class="col s12 center">
+    <span>Offer From: {{getter.username}}</span>
+</div>
+<div class="trashCard col s6 center">
+    <span class="center">You Give</span>
+<div class="card teal {{rarityCheck giving.trash.rarity}}">
+    <div class="card-image">
+        <img class="trashImage{{giving.id}} materialboxed" src="{{stillGif giving.trash.image}}">
+        <span class="trashCard-title center card-title">{{giving.trash.name}}</span>
+    </div>
+    <div class="card-content">
+        <p class="cardText">Category: {{giving.trash.category}}</p>
+        <p class="cardText"><strong>{{rarityCheck giving.trash.rarity}}</strong></p>
+    </div>
+</div>
+</div>
+<div class="trashCard col s6 center">
+        <span class="center">You Receive</span>
+<div class="card teal {{rarityCheck getting.trash.rarity}}">
+    <div class="card-image">
+        <img class="trashImage{{getting.id}} materialboxed" src="{{stillGif getting.trash.image}}">
+        <span class="trashCard-title center card-title">{{getting.trash.name}}</span>
+    </div>
+    <div class="card-content">
+        <p class="cardText">Category: {{getting.trash.category}}</p>
+        <p class="cardText"><strong>{{rarityCheck getting.trash.rarity}}</strong></p>
+    </div>
+</div>
+</div>
+<div class="col s12 center">
+    <a class="waves-effect waves-light btn green acceptBtn" data-tradeId="{{id}}">Accept</a>
+    <a class="waves-effect waves-light btn red denyBtn" data-tradeId="{{id}}">Deny</a>
+</div>
+    </div>
+</div>
+    <script>
+    $(function() {
+    $(".trashImage{{giving.id}}").hover(
+        function() {
+            $(this).attr("src", "{{giving.trash.image}}");
+        },
+        function() {
+            $(this).attr("src", "{{stillGif giving.trash.image}}");
+        }                         
+    );                  
+    $(".trashImage{{getting.id}}").hover(
+        function() {
+            $(this).attr("src", "{{getting.trash.image}}");
+        },
+        function() {
+            $(this).attr("src", "{{stillGif getting.trash.image}}");
+        }                         
+    );                  
+});
+</script>
