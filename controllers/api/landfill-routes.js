@@ -5,17 +5,15 @@ const landfillUpdate = async () => {
     const landfillList = await UserTrash.findAll({where: {inLandfill: true}, order: [
         ['updatedAt', 'DESC']
     ],})
-    landfillList.forEach( async (trash) => {
+    landfillList.forEach((trash) => {
         if(trash.updatedAt - Date.now() >= 86400000) {
-            await trash.destroy()
+            trash.destroy()
         }
     })
-    if(landfillList.length > 100) {
-        while(landfillList > 100) {
-            landfillList[(landfillList.length - 1)].destroy()
-            landfillList.pop()
-        }
+    if(landfillList.length >= 100) {
+        landfillList[(landfillList.length - 1)].destroy()
     }
+    console.log(landfillList.length)
     return;
 }
 
