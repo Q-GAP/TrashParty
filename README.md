@@ -35,13 +35,15 @@
   ## Screenshots 📷
 ---
 
-  |  Login Screenshot                              | Personal Trash Pile                               | Landfill                               | 
-  |:------------------------------------------------------:|:------------------------------------------------------:|:------------------------------------------------------:|
-  | <img alt="Random Placeholder" href="https://loremflickr.com/240/240" src="https://loremflickr.com/240/240" width="150" height="150"> |<img alt="Random Placeholder" href="https://loremflickr.com/240/240" src="https://loremflickr.com/240/240" width="150" height="150">|<img alt="Random Placeholder" href="https://loremflickr.com/240/240" src="https://loremflickr.com/240/240" width="150" height="150">|
-  |                                                        |                                                        |                                                        |
-  |                                                        |                                                        |                                                        |   
+### Desktop
 
-
+ |  Login Screenshot                              | Personal Trash Pile                                            | Landfill                                               |   
+|:----------------------------------:|:----------------------------------:|:----------------------------------:|
+  | <img alt="TrashParty Desktop Login Screenshot" href="./public/images/README/desktop_login.png" src="./public/images/README/desktop_login.png" width="360" height="200"> |<img alt="User's Personal Trash Screenshot" href="./public/images/README/desktop_collection.png" src="./public/images/README/desktop_collection.png" width="360" height="200">|<img alt="New Pack Screenshot" href="./public/images/README/desktop_newpack.png" src="./public/images/README/desktop_newpack.png" width="340" height="200">|
+  |      |                |
+  |         **Home (Mobile)**                                         |        **Personal Trash Pile (Mobile)**                               |     **Dashboard    (Mobile)**                                               |
+  |<img alt="Mobile Home Page" href="./public/images/README/splash_mobile.jpg" src="./public/images/README/splash_mobile.jpg" width="108" height="246"> | <img alt="Mobile trash collection page" href="./public/images/README/collection_mobile.jpg" src="./public/images/README/collection_mobile.jpg" width="108" height="246">|<img alt="Mobile Home Page" href="./public/images/README/dash_mobile.png" src="./public/images/README/dash_mobile.png" width="108" height="246">
+|                   |                   |
   ## WireFrames 🖼️
 
 //TODO:
@@ -51,7 +53,7 @@ Anythony, please add wireframes once they are complete.
 
 ---
 
-  Post an issue on this repo https://github.com/Q-GAP/TrashParty. If it's urgent or there's money involved: email support@peterroto.com
+  Post an issue on this repo https://github.com/Q-GAP/TrashParty. If it's urgent or there's money involved: [email us](mailto:trashparty@peterroto.com)
   <br />
   <br />
   :octocat: Find our team on GitHub: <br />
@@ -61,7 +63,7 @@ Anythony, please add wireframes once they are complete.
   [GPLOTKE](https://github.com/GPLOTKE)
   [Proto133](https://github.com/Proto133)<br />
   <br />
-  📬 Email us with any questions: support@peterroto.com<br /><br />
+  📬 Email us with any questions: trashparty@peterroto.com<br /><br />
   
   ## License ![badge](https://img.shields.io/badge/license-BSD_3_Clause-brightgreen)
 ---
