@@ -5,11 +5,12 @@ const landfillAddHandler = async(event) => {
         headers: { 'Content-Type': 'application/json' }
     })
     if (response.ok) {
-        document.location.reload()
+        setTimeout(() => {
+            window.location.reload()
+        }, 250)
+
     }
-
 }
-
 const landfillButtons = document.querySelectorAll(".landfillBtn")
 landfillButtons.forEach((button) => {
     button.addEventListener("click", landfillAddHandler)
