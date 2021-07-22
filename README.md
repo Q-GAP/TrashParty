@@ -6,7 +6,7 @@
   ## 👇  Description  👇
 ---
   
-  NFT-style Webapp  for (entertainment purposes): A website where once a day you open a pack of random stuff (data we collect from different API's). In the packs could be anywhere from songs to movies to pokemon cards, really any type of data we can get from an API and have time to implement. You can trade your "trash" with other users till you get items you actually like.
+  NFT-inspired Webapp  for (entertainment purposes): A website where once a day you open a pack of random stuff (data we collect from different API's). In the packs could be anywhere from songs to movies to pokemon cards, really any type of data we can get from an API and have time to implement. You can trade your "trash" with other users till you get items you actually like.
  
   ## Table of Contents 
   - [Description](#--description--)
@@ -20,7 +20,11 @@
     
   ## Installation Instructions 📣
 ---
-
+  1. Clone the repository
+  2. Run |||  npm i  |||  (install dependencies)
+  3. Copy [schema.sql](./db/schema.sql) into your MySQL Local Instance (Make the database)
+  4. Run ||| npm run seed ||| (seeds the database with gifs)
+  5. Run |||  npm run watch  |||  (starts nodemon as a daemon that restarts the server with any modifications you make)
   
   
   ## Usage 🖱️
@@ -41,13 +45,12 @@
 |:----------------------------------:|:----------------------------------:|:----------------------------------:|
   | <img alt="TrashParty Desktop Login Screenshot" href="./public/images/README/desktop_login.png" src="./public/images/README/desktop_login.png" width="360" height="200"> |<img alt="User's Personal Trash Screenshot" href="./public/images/README/desktop_collection.png" src="./public/images/README/desktop_collection.png" width="360" height="200">|<img alt="New Pack Screenshot" href="./public/images/README/desktop_newpack.png" src="./public/images/README/desktop_newpack.png" width="340" height="200">|
   |      |                |
-  |         **Home (Mobile)**                                         |        **Personal Trash Pile (Mobile)**                               |     **No Pack     (Mobile)**                                               |
+  |         **Home (Mobile)**                                         |        **Personal Trash Pile (Mobile)**                               |     **Dashboard     (Mobile)**                                               |
   |<img alt="Mobile Home Page" href="./public/images/README/splash_mobile.jpg" src="./public/images/README/splash_mobile.jpg" width="108" height="246"> | <img alt="Mobile trash collection page" href="./public/images/README/collection_mobile.jpg" src="./public/images/README/collection_mobile.jpg" width="108" height="246">|<img alt="Mobile Home Page" href="./public/images/README/dash_mobile.png" src="./public/images/README/dash_mobile.png" width="108" height="246">
 |                   |                   |
   ## WireFrames 🖼️
 
-//TODO:
-Anythony, please add wireframes once they are complete.
+  <img src="./public/images/wireframes/collection.PNG"> | <img src="./public/images/wireframes/dashboard.PNG"> |<img src="./public/images/wireframes/landfill.PNG"> | <img src="./public/images/wireframes/login.PNG">
 
 ## Questions ❔
 
