@@ -194,7 +194,7 @@ router.get('/pack', async(req, res) => {
             return;
         }
         const user = await User.findByPk(req.session.userId)
-        if ((user.lastOpened - Date.now()) >= 43200000 || user.lastOpened == null) {
+        if ((Date.now() - user.lastOpened) >= 43200000 || user.lastOpened == null) {
             let newTrashList = [];
             for(i = 0; i < 6; i++) {
                 const rng = (Math.floor(Math.random() * 100) + 1)
