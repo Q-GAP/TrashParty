@@ -95,9 +95,7 @@ router.get('/dashboard', async (req, res) => {
 
 router.get('/trades', async (req, res) => {
     try {
-        if(!req.session.loggedIn) {
-            res.status(200).redirect('/login')
-        }
+        if(req.session.loggedIn) {
         let tradeRequests = await Trade.findAll({
             where: {giverId: req.session.userId},
             include: [{model: UserTrash, as:"giving", include:[{model: Trash}]},
@@ -121,6 +119,10 @@ router.get('/trades', async (req, res) => {
         console.log(pendingTrades)
         res.render('trades', {tradeRequests, pendingTrades, username: req.session.username, userid: req.session.userId, loggedIn: req.session.loggedIn})
     }
+    else {
+        res.status(200).redirect('/login')
+    }
+}
     catch (err) {
         console.log(err)
         res.status(500).json(err)
