@@ -119,7 +119,9 @@ router.get('/collection', async(req, res) => {
         }
     }
     try {
-        const userTrashList = await UserTrash.findAll({ where: { userId: req.session.userId, inLandfill: false }, include: [{ model: Trash }] })
+        const userTrashList = await UserTrash.findAll({ where: { userId: req.session.userId, inLandfill: false }, include: [{ model: Trash }], order: [
+            ['updatedAt', 'DESC']
+        ] })
         const trashList = userTrashList.map((trash) => trash.get({ plain: true }))
         if (trashList.length == 0) {
             trashList.push(TP_example)
@@ -144,7 +146,9 @@ router.get('/collection', async(req, res) => {
 
 router.get('/landfill', async(req, res) => {
     try {
-        const landfill = await UserTrash.findAll({ where: { inLandfill: true }, include: [{ model: Trash }, {model: User, attributes: ["username"]}] })
+        const landfill = await UserTrash.findAll({ where: { inLandfill: true }, include: [{ model: Trash }, {model: User, attributes: ["username"]}], order: [
+            ['updatedAt', 'DESC']
+        ] })
         const landfillList = landfill.map((trash) => trash.get({ plain: true }))
         res.render('landfill', {
             loggedIn: req.session.loggedIn,
