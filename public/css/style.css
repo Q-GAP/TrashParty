@@ -52,6 +52,15 @@ body {
 
 /* =========== START =========== SPECIALTY =========== ITEMS */
 
+.dropdown-content {
+    padding: 5px !important;
+    width: 50vw !important;
+}
+
+.dropdown-content li {
+    font-size: var(--smallFont)
+}
+
 .author {
     font-weight: 100;
 }
@@ -102,7 +111,7 @@ header {
 }
 
 nav {
-    background-color: var(--trashy);
+    background-color: var(--trashy-dingy);
     position: relative;
     padding: 0 2vw;
 }
@@ -273,6 +282,7 @@ opacity: .5;
 h4.tp-text-slate {
     background-color: var(--tp_lightgrey);
     margin-bottom: 0;
+    padding-top: var(--normallLineHeight);
     padding-bottom: var(--largelLineHeight);
 }
 
@@ -287,6 +297,7 @@ h4.tp-text-slate {
 .action-panel h5 {
     flex: 1 0 100%;
     margin-top: 0;
+    text-emphasis: underline;
 }
 
 .action-panel a {
