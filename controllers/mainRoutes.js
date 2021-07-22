@@ -144,9 +144,35 @@ router.get('/collection', async(req, res) => {
     }
 })
 
+router.get('/user/:id', async(req, res) => {
+    try {
+        const userTrashList = await UserTrash.findAll({ where: { userId: req.params.id, inLandfill: false }, include: [{ model: Trash }, {model: User, attributes: ["username"]}], order: [
+            ['updatedAt', 'DESC']
+        ] })
+        const trashList = userTrashList.map((trash) => trash.get({ plain: true }))
+        if (trashList.length == 0) {
+            res.render('userPage', {
+                loggedIn: req.session.loggedIn,
+                trashList: trashList,
+                username: "Nobody"
+            })
+        } else {
+            res.render('userPage', {
+                loggedIn: req.session.loggedIn,
+                trashList: trashList,
+                username: trashList[0].user.username
+            })
+        }
+    } catch (err) {
+        console.log(err);
+        res.status(401).redirect('/');
+
+    }
+})
+
 router.get('/landfill', async(req, res) => {
     try {
-        const landfill = await UserTrash.findAll({ where: { inLandfill: true }, include: [{ model: Trash }, {model: User, attributes: ["username"]}], order: [
+        const landfill = await UserTrash.findAll({ where: { inLandfill: true }, include: [{ model: Trash }, {model: User, attributes: ["username", "id"]}], order: [
             ['updatedAt', 'DESC']
         ] })
         const landfillList = landfill.map((trash) => trash.get({ plain: true }))
