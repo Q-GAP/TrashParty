@@ -542,6 +542,11 @@ section hr {
     bottom: 20px;
 }
 
+.userLink {
+    color: white;
+    text-decoration: underline;
+}
+
 
 /* .trashContainer {
     height: 100%;
