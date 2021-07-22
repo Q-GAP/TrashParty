@@ -494,8 +494,12 @@ img[class*=" trashImage"] {
     box-shadow: 5px 2px 2px rgb(109, 109, 109);
 }
 
-.category {
+.cardText {
     font-size: 1vw;
+}
+
+.tossedBy {
+    font-size: 0.75vw;
 }
 
 #materialbox-overlay {
