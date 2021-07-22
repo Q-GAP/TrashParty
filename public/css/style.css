@@ -561,8 +561,11 @@ section hr {
     .trashCard .card-image {
         height: 12em;
     }
-    .category {
+    .cardText {
         font-size: 1.5vw;
+    }
+    .tossedBy {
+        font-size: 1vw;
     }
 }
 
@@ -570,8 +573,11 @@ section hr {
     .trashCard .card-image {
         height: 15em;
     }
-    .trashCard .category {
+    .trashCard .cardText {
         font-size: 2.5vw
+    }
+    .tossedBy {
+        font-size: 1.5vw;
     }
     .login-signup {
         padding-top: 2.5vh;
