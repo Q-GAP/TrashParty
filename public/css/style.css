@@ -581,5 +581,6 @@ img[class*=" trashImage"] {
 @media only screen and (max-width:568px) {
     .window {
         width: 100%;
+        margin: 0;
     }
 }
