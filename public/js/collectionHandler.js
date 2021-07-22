@@ -1,3 +1,4 @@
+console.log('Welcome to Your Collection');
 const landfillAddHandler = async(event) => {
     const trashId = event.target.dataset.trashid
     const response = await fetch(`/api/landfill/${trashId}`, {
