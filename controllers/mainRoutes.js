@@ -217,6 +217,29 @@ router.get('/landfill', async(req, res) => {
     }
 })
 
+router.get('/request/:id', async(req, res) => {
+    try {
+        if(req.session.loggedIn) {
+            const collection = await UserTrash.findAll({ where: { inLandfill: false, userId: req.session.userId }, include: [{ model: Trash }, {model: User, attributes: ["username", "id"]}], order: [
+                ['updatedAt', 'DESC']
+            ] })
+            const collectionList = collection.map((trash) => trash.get({ plain: true }))
+            res.render('requesttrade', {
+                loggedIn: req.session.loggedIn,
+                givingId: req.params.id,
+                trashList: collectionList
+            })
+        }
+        else {
+            res.redirect("/login")
+        }
+    } catch (err) {
+        console.log(err);
+        res.status(401).redirect('/');
+
+    }
+})
+
 router.get('/pack', async(req, res) => {
     try {
         if (!req.session.userId) {

@@ -1,13 +1,13 @@
  <div class="trashCard col s12 m6 l4">
       <div class="card teal {{rarityCheck trash.rarity}}"> 
-        <div class="card-image teal">
+        <div class="card-image">
           <img class="trashImage{{id}} materialboxed" src="{{stillGif trash.image}}">
-          <span class="card-title">{{trash.name}}</span>
+          <span class="trashCard-title center card-title">{{trash.name}}</span>
         </div>
         <div class="card-content">
           <p class="cardText">Category: {{trash.category}}</p>
           <p class="cardText"><strong>{{rarityCheck trash.rarity}}</strong></p>
-          <a class="btn-floating tooltipped halfway-fab teal tradeOfferBtn" data-trashId="{{id}}" data-position="bottom" data-tooltip="Make Trade Request"><i class="material-icons" data-trashId="{{id}}">local_offer</i></a>
+          <a class="btn-floating tooltipped halfway-fab teal makeRequestBtn" data-trashId="{{id}}" data-position="bottom" data-tooltip="Offer For Trade" data-trashId="{{id}}"><i class="material-icons" data-trashId="{{id}}">local_offer</i></a>
         </div>
       </div>
     </div>
@@ -24,3 +24,4 @@
 });
  
 </script>
+
