@@ -4,7 +4,7 @@ const tradeAccept = async(event) => {
         method: "GET",
         headers: { 'Content-Type': 'application/json' }
     })
-    if(response.ok) {
+    if (response.ok) {
         setTimeout(function() {
             window.location.reload()
         }, 100)
@@ -17,7 +17,7 @@ const tradeDeny = async(event) => {
         method: "DELETE",
         headers: { 'Content-Type': 'application/json' }
     })
-    if(response.ok) {
+    if (response.ok) {
         setTimeout(function() {
             window.location.reload()
         }, 100)

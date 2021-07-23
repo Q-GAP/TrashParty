@@ -5,16 +5,18 @@ $('.sidenav-trigger').on('click', () => {
 
 
 $(window).on('click', (e) => {
-        let ignore = document.querySelector('.sn')
-        if (e.target == ignore.firstChild || e.target == document.querySelector('i')) {
-            console.log(e.target)
-        } else {
-            document.querySelector('.sidenav-overlay').click();
-            $('.login-signup').children().show();
-        }
+    let ignore = document.querySelector('.sn')
+    if (e.target == ignore.firstChild || e.target == document.querySelector('i')) {
+        console.log(e.target)
+    } else {
+        document.querySelector('.sidenav-overlay').click();
+        $('.login-signup').children().show();
+    }
 
-    })
-    // Start Real Code.
+})
+
+
+// Start Real Code.
 
 // Login
 const loginFormHandler = async(event) => {
