@@ -11,7 +11,7 @@ const makeOfferHandler = async (event) => {
     })
     if(response.ok) {
         setTimeout(function() {
-            window.location.replace("/dashboard")
+            window.location.replace("/trades")
         }, 100)
     }
 }
