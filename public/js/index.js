@@ -37,4 +37,4 @@ $('#startGIF').on('click', () => {
     $('#stopGIF').show();
 })
 
-$('#logout').on('click', logout);
+$('.logout').on('click', logout);
