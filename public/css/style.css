@@ -281,6 +281,37 @@ opacity: .5;
 
 /* =========== END =========== SPLASH =========== */
 
+.tradeCard {
+    background-color: var(--tp_teal);
+    padding: 1vh 0;
+}
+
+.trade-title {
+    font-weight: 500;
+}
+
+.doTrade {
+    font-size: var(--largestFont);
+    margin: 0;
+    font-weight: 800;
+}
+
+.acceptBtn,
+.denyBtn {
+    border-radius: 50%;
+    margin: 0 1vw;
+}
+
+.denyBtn {
+    background-color: var(--tp_red);
+    border: 1px solid red;
+}
+
+.acceptBtn {
+    background-color: var(--trashy-dingy);
+    border: 1px solid green;
+}
+
 
 /* =========== START =========== DASH =========== */
 
@@ -494,7 +525,7 @@ img[class*=" trashImage"] {
 }
 
 .Rare {
-    box-shadow: 10px 5px 5px rgb(223, 18, 250);
+    box-shadow: 5px 5px 5px rgb(223, 18, 250);
 }
 
 .Uncommon {
@@ -533,7 +564,6 @@ img[class*=" trashImage"] {
     color: white;
     text-decoration: underline;
 }
-
 
 
 /* =========== END =========== TRASHCARDS =========== */
