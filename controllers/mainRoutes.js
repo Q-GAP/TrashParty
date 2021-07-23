@@ -95,9 +95,7 @@ router.get('/dashboard', async (req, res) => {
 
 router.get('/trades', async (req, res) => {
     try {
-        if(!req.session.loggedIn) {
-            res.status(200).redirect('/login')
-        }
+        if(req.session.loggedIn) {
         let tradeRequests = await Trade.findAll({
             where: {giverId: req.session.userId},
             include: [{model: UserTrash, as:"giving", include:[{model: Trash}]},
@@ -121,6 +119,10 @@ router.get('/trades', async (req, res) => {
         console.log(pendingTrades)
         res.render('trades', {tradeRequests, pendingTrades, username: req.session.username, userid: req.session.userId, loggedIn: req.session.loggedIn})
     }
+    else {
+        res.status(200).redirect('/login')
+    }
+}
     catch (err) {
         console.log(err)
         res.status(500).json(err)
@@ -208,6 +210,29 @@ router.get('/landfill', async(req, res) => {
             loggedIn: req.session.loggedIn,
             trashList: landfillList
         })
+    } catch (err) {
+        console.log(err);
+        res.status(401).redirect('/');
+
+    }
+})
+
+router.get('/request/:id', async(req, res) => {
+    try {
+        if(req.session.loggedIn) {
+            const collection = await UserTrash.findAll({ where: { inLandfill: false, userId: req.session.userId }, include: [{ model: Trash }, {model: User, attributes: ["username", "id"]}], order: [
+                ['updatedAt', 'DESC']
+            ] })
+            const collectionList = collection.map((trash) => trash.get({ plain: true }))
+            res.render('requesttrade', {
+                loggedIn: req.session.loggedIn,
+                givingId: req.params.id,
+                trashList: collectionList
+            })
+        }
+        else {
+            res.redirect("/login")
+        }
     } catch (err) {
         console.log(err);
         res.status(401).redirect('/');

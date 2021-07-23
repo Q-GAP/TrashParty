@@ -1,11 +1,26 @@
 <section class="trades">
-<h2 class="center">Trades</h2>
-<hr>
-<div class="row">
-    {{#each tradeRequests as |request|}}
-    {{> listRequests}}
-    {{/each}}
-</div>
+    <h2 class="center">Trades</h2>
+    <hr>
+    <div class="row tradesDiv">
+        <h4>Incoming Trade Requests</h4>
+ {{#if tradeRequests}}
+        {{#each tradeRequests as |request|}}
+        {{> listRequests}}
+        {{/each}}
+    {{else}}
+    <p class="center white-text"> No Pending Trade Requests</p>
+ {{/if}}
+    </div>
+    <div class="row tradesDiv">
+        <h4>Outgoing Trade Requests</h4>
+ {{#if pendingTrades}}
+        {{#each pendingTrades as |request|}}
+        {{> listPendingTrades}}
+        {{/each}}
+    {{else}}
+    <p class="center white-text"> No Pending Trade Requests</p>
+ {{/if}}
+    </div>
 </section>
 
 <script src="/js/tradeHandler.js"></script>
