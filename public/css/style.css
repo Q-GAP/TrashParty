@@ -570,6 +570,14 @@ img[class*=" trashImage"] {
     bottom: 20px;
 }
 
+.btn-floating.halfway-fab.tradeOfferBtn {
+    bottom: 20px;
+}
+
+.btn-floating.halfway-fab.makeRequestBtn {
+    bottom: 20px;
+}
+
 .btn-floating.halfway-fab.claimBtn {
     bottom: 20px;
 }
@@ -577,6 +585,16 @@ img[class*=" trashImage"] {
 .userLink {
     color: white;
     text-decoration: underline;
+}
+
+.tradesDiv {
+    background-color: rgba(0, 0, 0, 0.603);
+}
+
+.tradesDiv h4 {
+    color: white;
+    padding: 5px 10px;
+
 }
 
 
