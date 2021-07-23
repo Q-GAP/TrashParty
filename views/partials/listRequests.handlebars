@@ -1,38 +1,34 @@
-<div class="col s12 m6 card tradeCard">
-    <div class="row">
-        <div class="col s12 center">
-</div>
-<div class="trashCard col s6 center">
-    <span class="center trade-title"><a href="/user/{{getter.id}}">{{getter.username}}</a> Wants:</span>
-<div class="card teal {{rarityCheck giving.trash.rarity}}">
-    <div class="card-image">
-        <img class="trashImage{{giving.id}} materialboxed" src="{{stillGif giving.trash.image}}">
-        <span class="trashCard-title center card-title">{{giving.trash.name}}</span>
+<div class="card tradeCard">
+    <div class="trashCard center">
+        <span class="center trade-title"><a href="/user/{{getter.id}}">{{getter.username}}</a> Wants:</span>
+        <div class="card teal {{rarityCheck giving.trash.rarity}}">
+            <div class="card-image">
+                <img class="trashImage{{giving.id}} materialboxed" src="{{stillGif giving.trash.image}}">
+                <span class="trashCard-title center card-title">{{giving.trash.name}}</span>
+            </div>
+            <div class="card-content">
+                <p class="cardText">Category: {{giving.trash.category}}</p>
+                <p class="cardText"><strong>{{rarityCheck giving.trash.rarity}}</strong></p>
+            </div>
+        </div>
     </div>
-    <div class="card-content">
-        <p class="cardText">Category: {{giving.trash.category}}</p>
-        <p class="cardText"><strong>{{rarityCheck giving.trash.rarity}}</strong></p>
-    </div>
-</div>
-</div>
-<div class="trashCard col s6 center">
+    <div class="trashCard center">
         <span class="trade-title center">For Their:</span>
-<div class="card teal {{rarityCheck getting.trash.rarity}}">
-    <div class="card-image">
-        <img class="trashImage{{getting.id}} materialboxed" src="{{stillGif getting.trash.image}}">
-        <span class="trashCard-title center card-title">{{getting.trash.name}}</span>
+        <div class="card teal {{rarityCheck getting.trash.rarity}}">
+            <div class="card-image">
+                <img class="trashImage{{getting.id}} materialboxed" src="{{stillGif getting.trash.image}}">
+                <span class="trashCard-title center card-title">{{getting.trash.name}}</span>
+            </div>
+            <div class="card-content">
+                <p class="cardText">Category: {{getting.trash.category}}</p>
+                <p class="cardText"><strong>{{rarityCheck getting.trash.rarity}}</strong></p>
+            </div>
+        </div>
     </div>
-    <div class="card-content">
-        <p class="cardText">Category: {{getting.trash.category}}</p>
-        <p class="cardText"><strong>{{rarityCheck getting.trash.rarity}}</strong></p>
-    </div>
-</div>
-</div>
-<div class="col s12 center">
-    <p class="doTrade"> We Doing This? </p>
-    <a title="Accept this trade!" class="waves-effect waves-light btn  acceptBtn center" data-tradeId="{{id}}"><i class="fas fa-check"></i></a>
-    <a title="Get that ish outta here!" class="waves-effect waves-light btn denyBtn center" data-tradeId="{{id}}"><i class="fas fa-ban"></i></a>
-</div>
+    <div class=" trade-confirm center">
+        <p class="doTrade"> We Doing This? </p>
+        <a title="Accept this trade!" class="waves-effect waves-light btn  acceptBtn center" data-tradeId="{{id}}"><i class="fas fa-check"></i></a>
+        <a title="Get that ish outta here!" class="waves-effect waves-light btn denyBtn center" data-tradeId="{{id}}"><i class="fas fa-ban"></i></a>
     </div>
 </div>
     <script>
