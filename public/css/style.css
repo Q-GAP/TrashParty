@@ -161,6 +161,20 @@ nav ul a {
     overflow: auto;
 }
 
+.input-field input[type=search] {
+    background-color: white;
+    padding-left: 16px;
+}
+
+.input-field i {
+    top: 7px;
+    height: 43px;
+}
+
+#search label.active {
+    font-weight: 800 !important;
+}
+
 
 /* .bg-img {
 width: 100%;
