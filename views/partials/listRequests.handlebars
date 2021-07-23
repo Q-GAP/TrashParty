@@ -27,8 +27,12 @@
     </div>
     <div class=" trade-confirm center">
         <p class="doTrade"> We Doing This? </p>
-        <a title="Accept this trade!" class="waves-effect waves-light btn  acceptBtn center" data-tradeId="{{id}}"><i class="fas fa-check"></i></a>
-        <a title="Get that ish outta here!" class="waves-effect waves-light btn denyBtn center" data-tradeId="{{id}}"><i class="fas fa-ban"></i></a>
+        <a title="Accept this trade!" class="waves-effect waves-light btn acceptBtn center" data-tradeId="{{id}}">
+            <i data-tradeId="{{id}}" class="fas fa-check"></i>
+        </a>
+        <a title="Get that ish outta here!" class="waves-effect waves-light btn denyBtn center" data-tradeId="{{id}}">
+            <i  data-tradeId="{{id}}" class="fas fa-ban"></i>
+        </a>
     </div>
 </div>
     <script>
