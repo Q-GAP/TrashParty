@@ -161,6 +161,20 @@ nav ul a {
     overflow: auto;
 }
 
+.input-field input[type=search] {
+    background-color: white;
+    padding-left: 16px;
+}
+
+.input-field i {
+    top: 7px;
+    height: 43px;
+}
+
+#search label.active {
+    font-weight: 800 !important;
+}
+
 
 /* .bg-img {
 width: 100%;
@@ -281,13 +295,56 @@ opacity: .5;
 
 /* =========== END =========== SPLASH =========== */
 
+
+/* =========== START =========== TRADES =========== */
+
+.tradesDiv {
+    background-color: rgba(0, 0, 0, 0.603);
+    margin: 1vh 0;
+}
+
+.tradesDiv h4 {
+    color: white;
+    padding: 5px 10px;
+}
+
+.tradeBlock {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+
+.tradeBlock h4 {
+    flex: 1 0 100%;
+}
+
 .tradeCard {
+    display: flex;
+    justify-content: space-evenly;
+    flex-flow: row wrap;
+    gap: 1vh 1vw;
+    flex: 0 0 45%;
     background-color: var(--tp_teal);
     padding: 1vh 0;
 }
 
+.tradeCard .trashCard {
+    min-width: 200px;
+    flex: 0 0 30%;
+}
+
+.trade-confirm {
+    flex: 1 0 100%;
+}
+
 .trade-title {
     font-weight: 500;
+}
+
+.trade-title a {
+    font-weight: 800;
+    color: unset;
+    text-decoration: underline;
 }
 
 .doTrade {
@@ -311,6 +368,9 @@ opacity: .5;
     background-color: var(--trashy-dingy);
     border: 1px solid green;
 }
+
+
+/* =========== END =========== TRADES =========== */
 
 
 /* =========== START =========== DASH =========== */
@@ -571,16 +631,6 @@ img[class*=" trashImage"] {
 .userLink {
     color: white;
     text-decoration: underline;
-}
-
-.tradesDiv {
-    background-color: rgba(0, 0, 0, 0.603);
-}
-
-.tradesDiv h4 {
-    color: white;
-    padding: 5px 10px;
-
 }
 
 
