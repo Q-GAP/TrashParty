@@ -1,10 +1,9 @@
-<div class="col s12 m6 card blue tradeCard">
+<div class="col s12 m6 card tradeCard">
     <div class="row">
         <div class="col s12 center">
-    <span>Offer From: {{getter.username}}</span>
 </div>
-<div class="trashCard col s6 center">
-    <span class="center">You Give</span>
+<div class="trashCard trade-title col s6 center">
+    <span class="center">{{getter.username}} Wants:</span>
 <div class="card teal {{rarityCheck giving.trash.rarity}}">
     <div class="card-image">
         <img class="trashImage{{giving.id}} materialboxed" src="{{stillGif giving.trash.image}}">
@@ -17,7 +16,7 @@
 </div>
 </div>
 <div class="trashCard col s6 center">
-        <span class="center">You Receive</span>
+        <span class="trade-title center">For Your:</span>
 <div class="card teal {{rarityCheck getting.trash.rarity}}">
     <div class="card-image">
         <img class="trashImage{{getting.id}} materialboxed" src="{{stillGif getting.trash.image}}">
@@ -30,8 +29,9 @@
 </div>
 </div>
 <div class="col s12 center">
-    <a class="waves-effect waves-light btn green acceptBtn" data-tradeId="{{id}}">Accept</a>
-    <a class="waves-effect waves-light btn red denyBtn" data-tradeId="{{id}}">Deny</a>
+    <p class="doTrade"> We Doing This? </p>
+    <a title="Accept this trade!" class="waves-effect waves-light btn  acceptBtn center" data-tradeId="{{id}}"><i class="fas fa-check"></i></a>
+    <a title="Get that ish outta here!" class="waves-effect waves-light btn denyBtn center" data-tradeId="{{id}}"><i class="fas fa-ban"></i></a>
 </div>
     </div>
 </div>
