@@ -10,6 +10,15 @@
 
 <hr>
 <div class="row container">
+  <form>
+    <div class="input-field">
+      <input id="search"  placeholder="Search"type="search" required>
+      <label for="search">Search</label>
+      <i class="material-icons right">search</i>
+    </div>
+  </form>
+</div>
+<div class="trashWall row container">
     {{#each trashList as |fullTrash|}}
     {{> listTrash}}
     {{/each}}
