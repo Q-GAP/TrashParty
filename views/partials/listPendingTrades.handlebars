@@ -3,7 +3,7 @@
         <div class="col s12 center">
 </div>
 <div class="trashCard col s6 center">
-    <span class="center trade-title"><a href="/user/{{getter.id}}">{{getter.username}}</a> Wants:</span>
+    <span class="center trade-title">You want <a href="/user/{{giver.id}}">{{giver.username}}</a>'s:</span>
 <div class="card teal {{rarityCheck giving.trash.rarity}}">
     <div class="card-image">
         <img class="trashImage{{giving.id}} materialboxed" src="{{stillGif giving.trash.image}}">
@@ -16,7 +16,7 @@
 </div>
 </div>
 <div class="trashCard col s6 center">
-        <span class="trade-title center">For Their:</span>
+        <span class="trade-title center">For Your:</span>
 <div class="card teal {{rarityCheck getting.trash.rarity}}">
     <div class="card-image">
         <img class="trashImage{{getting.id}} materialboxed" src="{{stillGif getting.trash.image}}">
@@ -29,8 +29,6 @@
 </div>
 </div>
 <div class="col s12 center">
-    <p class="doTrade"> We Doing This? </p>
-    <a title="Accept this trade!" class="waves-effect waves-light btn  acceptBtn center" data-tradeId="{{id}}"><i class="fas fa-check"></i></a>
     <a title="Get that ish outta here!" class="waves-effect waves-light btn denyBtn center" data-tradeId="{{id}}"><i class="fas fa-ban"></i></a>
 </div>
     </div>

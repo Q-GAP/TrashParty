@@ -1,4 +1,4 @@
-let APIKEY = "ur8sKa88o5YJg8iulM0iYStuzZAuOiQC";
+let APIKEY = process.env.APIKEY;
 const fetch = require('node-fetch');
 var randomWords = require('random-words');
 const { Trash } = require("../models")

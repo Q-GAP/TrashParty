@@ -84,17 +84,37 @@ router.post("/", async (req, res) => {
         const giving = await UserTrash.findByPk(req.body.givingId, {
             include: [{model: User,  attributes: ["username", "id"]}]
         })
+
         if(getting.user.id == req.session.userId) {
-            const trade = await Trade.create({
-                getterId: getting.user.id,
-                giverId: giving.user.id,
-                gettingId: getting.id,
-                givingId: giving.id
-            })
-            res.status(200).json(trade)
+            if(getting.user.id != giving.user.id) {
+                const tradesList = await Trade.findAll({
+                    where: {getterId: req.session.userId}
+                })
+                let alreadyExists = false;
+                tradesList.forEach((trade) => {
+                    if(trade.gettingId == getting.id && trade.givingId == giving.id) {
+                        alreadyExists = true;
+                    }
+                })
+                if(!alreadyExists) {
+                    const trade = await Trade.create({
+                        getterId: getting.user.id,
+                        giverId: giving.user.id,
+                        gettingId: getting.id,
+                        givingId: giving.id
+                    })
+                    res.status(200).json(trade)
+                }
+                else {
+                    res.status(400).redirect("/trades")
+                }
+            }
+            else {
+                res.status(400).redirect("/trades")
+            }
         }
         else {
-            res.status(400).redirect("/")
+            res.status(400).redirect("/trades")
         }
     }
     catch (err) {
