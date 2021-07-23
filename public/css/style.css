@@ -295,7 +295,21 @@ opacity: .5;
 
 /* =========== END =========== SPLASH =========== */
 
+
+/* =========== START =========== TRADES =========== */
+
+.tradeBlock {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+
+.tradeBlock h4 {
+    flex: 1 0 100%;
+}
+
 .tradeCard {
+    flex: 0 0 45%;
     background-color: var(--tp_teal);
     padding: 1vh 0;
 }
@@ -325,6 +339,9 @@ opacity: .5;
     background-color: var(--trashy-dingy);
     border: 1px solid green;
 }
+
+
+/* =========== END =========== TRADES =========== */
 
 
 /* =========== START =========== DASH =========== */
@@ -594,7 +611,6 @@ img[class*=" trashImage"] {
 .tradesDiv h4 {
     color: white;
     padding: 5px 10px;
-
 }
 
 
