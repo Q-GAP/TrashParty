@@ -6,7 +6,7 @@ const landfillUpdate = async () => {
         ['updatedAt', 'DESC']
     ],})
     landfillList.forEach((trash) => {
-        if(trash.updatedAt - Date.now() >= 86400000) {
+        if((Date.now() - trash.updatedAt) >= 86400000) {
             trash.destroy()
         }
     })

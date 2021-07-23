@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, UserTrash, Trash } = require('../../models')
+const { User, UserTrash, Trash, Trade } = require('../../models')
 const bcrypt = require('bcrypt');
 
 
@@ -97,10 +97,12 @@ router.get('/:id', async(req, res) => {
     try {
         const user = await User.findByPk(req.params.id, {
             attributes: ["username", "id", "email"],
-            include: [{ model: UserTrash, include: [{ model: Trash }] }]
+            include: [{ model: UserTrash, include: [{ model: Trash }] },
+        {model: Trade, as: "trades"}]
         })
         res.status(200).json(user)
     } catch (err) {
+        console.log(err)
         res.status(400).json(err)
     }
 })

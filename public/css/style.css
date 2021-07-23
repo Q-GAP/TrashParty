@@ -249,13 +249,14 @@ opacity: .5;
 
 .fiveCard .card-title {
     background-color: var(--tp_slate);
-    font-size: var(--largeFont);
+    font-size: var(--normalFont);
     font-variant: small-caps;
     padding: auto 2vw;
 }
 
 .fiveCard .card-title i {
     float: right;
+    vertical-align: top;
     margin: 1vh;
 }
 
@@ -279,6 +280,37 @@ opacity: .5;
 
 
 /* =========== END =========== SPLASH =========== */
+
+.tradeCard {
+    background-color: var(--tp_teal);
+    padding: 1vh 0;
+}
+
+.trade-title {
+    font-weight: 500;
+}
+
+.doTrade {
+    font-size: var(--largestFont);
+    margin: 0;
+    font-weight: 800;
+}
+
+.acceptBtn,
+.denyBtn {
+    border-radius: 50%;
+    margin: 0 1vw;
+}
+
+.denyBtn {
+    background-color: var(--tp_red);
+    border: 1px solid red;
+}
+
+.acceptBtn {
+    background-color: var(--trashy-dingy);
+    border: 1px solid green;
+}
 
 
 /* =========== START =========== DASH =========== */
@@ -419,9 +451,19 @@ footer p {
     -webkit-text-fill-color: rgb(255, 255, 255);
 }
 
-.footer--links a:hover,
-.footer--trashroutes a:hover {
-    text-shadow: 2px 2px 4px #ff38ee;
+a {
+    transition: transform 0.5s ease;
+}
+
+
+/* a[text], */
+
+a:not(.btn):hover,
+a:not(.btn-floating):hover {
+    /* text-shadow: 2px 2px 4px #ff38ee; */
+    text-shadow: -1px -1px 1px #ff38ee;
+    z-index: 3;
+    transform: perspective(500px) rotateY(-5deg) rotateX(5deg) translateZ(1em);
 }
 
 .copyright#text {
@@ -483,7 +525,7 @@ img[class*=" trashImage"] {
 }
 
 .Rare {
-    box-shadow: 10px 5px 5px rgb(223, 18, 250);
+    box-shadow: 5px 5px 5px rgb(223, 18, 250);
 }
 
 .Uncommon {
@@ -575,5 +617,12 @@ img[class*=" trashImage"] {
         display: inline-flex;
         margin: 0;
         flex: 0 1 20%;
+    }
+}
+
+@media only screen and (max-width:568px) {
+    .window {
+        width: 100%;
+        margin: 0;
     }
 }

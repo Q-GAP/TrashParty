@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { UserTrash, Trash, User } = require('../models');
+const { UserTrash, Trash, User, Trade } = require('../models');
 
 
 router.get('/', async(req, res) => {
@@ -65,13 +65,9 @@ router.get('/signup', (req, res) => {
     return;
 });
 
-router.get('/dashboard', (req, res) => {
+router.get('/dashboard', async (req, res) => {
     if (req.session.loggedIn) {
-        User.findAll({
-            where: {
-                // use the ID from the session
-                username: req.session.userId
-            },
+       const user = await User.findByPk(req.session.userId, {
             attributes: [
                 "id",
                 "username",
@@ -83,22 +79,54 @@ router.get('/dashboard', (req, res) => {
                 include: [{
                     model: Trash
                 }]
-            }]
+            }, {model: Trade, as: "trades"}]
 
 
 
             // attributes: ['id', 'name', 'image', 'category', 'rarity'],
 
-        }).then(dashData => {
-            console.log('\n \n dashData: \n' + dashData + '\n \n')
-            const dashInfo = dashData.map(item => item.get({ plain: true }))
-            const userInfo = dashInfo[0]
-            console.log('\n \n userInfo: \n' + JSON.stringify(dashInfo[0]) + '\n \n')
-            res.render('dashboard', { userInfo, username: req.session.username, loggedIn: req.session.loggedIn })
         })
+            const userInfo = user.get({ plain: true })
+            res.render('dashboard', { userInfo, username: req.session.username, loggedIn: req.session.loggedIn })  
     } else {
         res.status(200).redirect('/login')
     }
+})
+
+router.get('/trades', async (req, res) => {
+    try {
+        if(!req.session.loggedIn) {
+            res.status(200).redirect('/login')
+        }
+        let tradeRequests = await Trade.findAll({
+            where: {giverId: req.session.userId},
+            include: [{model: UserTrash, as:"giving", include:[{model: Trash}]},
+            {model: UserTrash, as:"getting", include:[{model: Trash}]},
+            {model: User, as:"giver", attributes:["username", "id"]},
+            {model: User, as:"getter", attributes:["username", "id"]},
+          ]
+        })
+
+        let pendingTrades = await Trade.findAll({
+            where: {getterId: req.session.userId},
+            include: [{model: UserTrash, as:"giving", include:[{model: Trash}]},
+            {model: UserTrash, as:"getting", include:[{model: Trash}]},
+            {model: User, as:"giver", attributes:["username", "id"]},
+            {model: User, as:"getter", attributes:["username", "id"]},
+          ]
+        })
+
+        pendingTrades = pendingTrades.map((trade) => trade.get({plain: true}))
+        tradeRequests = tradeRequests.map((trade) => trade.get({plain: true}))
+        console.log(pendingTrades)
+        res.render('trades', {tradeRequests, pendingTrades, username: req.session.username, userid: req.session.userId, loggedIn: req.session.loggedIn})
+    }
+    catch (err) {
+        console.log(err)
+        res.status(500).json(err)
+    }
+
+
 })
 
 
@@ -194,7 +222,7 @@ router.get('/pack', async(req, res) => {
             return;
         }
         const user = await User.findByPk(req.session.userId)
-        if ((user.lastOpened - Date.now()) >= 43200000 || user.lastOpened == null) {
+        if ((Date.now() - user.lastOpened) >= 43200000 || user.lastOpened == null) {
             let newTrashList = [];
             for(i = 0; i < 6; i++) {
                 const rng = (Math.floor(Math.random() * 100) + 1)

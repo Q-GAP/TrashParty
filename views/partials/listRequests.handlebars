@@ -1,0 +1,57 @@
+<div class="col s12 m6 card tradeCard">
+    <div class="row">
+        <div class="col s12 center">
+</div>
+<div class="trashCard trade-title col s6 center">
+    <span class="center">{{getter.username}} Wants:</span>
+<div class="card teal {{rarityCheck giving.trash.rarity}}">
+    <div class="card-image">
+        <img class="trashImage{{giving.id}} materialboxed" src="{{stillGif giving.trash.image}}">
+        <span class="trashCard-title center card-title">{{giving.trash.name}}</span>
+    </div>
+    <div class="card-content">
+        <p class="cardText">Category: {{giving.trash.category}}</p>
+        <p class="cardText"><strong>{{rarityCheck giving.trash.rarity}}</strong></p>
+    </div>
+</div>
+</div>
+<div class="trashCard col s6 center">
+        <span class="trade-title center">For Your:</span>
+<div class="card teal {{rarityCheck getting.trash.rarity}}">
+    <div class="card-image">
+        <img class="trashImage{{getting.id}} materialboxed" src="{{stillGif getting.trash.image}}">
+        <span class="trashCard-title center card-title">{{getting.trash.name}}</span>
+    </div>
+    <div class="card-content">
+        <p class="cardText">Category: {{getting.trash.category}}</p>
+        <p class="cardText"><strong>{{rarityCheck getting.trash.rarity}}</strong></p>
+    </div>
+</div>
+</div>
+<div class="col s12 center">
+    <p class="doTrade"> We Doing This? </p>
+    <a title="Accept this trade!" class="waves-effect waves-light btn  acceptBtn center" data-tradeId="{{id}}"><i class="fas fa-check"></i></a>
+    <a title="Get that ish outta here!" class="waves-effect waves-light btn denyBtn center" data-tradeId="{{id}}"><i class="fas fa-ban"></i></a>
+</div>
+    </div>
+</div>
+    <script>
+    $(function() {
+    $(".trashImage{{giving.id}}").hover(
+        function() {
+            $(this).attr("src", "{{giving.trash.image}}");
+        },
+        function() {
+            $(this).attr("src", "{{stillGif giving.trash.image}}");
+        }                         
+    );                  
+    $(".trashImage{{getting.id}}").hover(
+        function() {
+            $(this).attr("src", "{{getting.trash.image}}");
+        },
+        function() {
+            $(this).attr("src", "{{stillGif getting.trash.image}}");
+        }                         
+    );                  
+});
+</script>

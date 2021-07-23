@@ -1,6 +1,7 @@
 const User = require('./User')
 const Trash = require('./Trash')
 const UserTrash = require('./Usertrash')
+const Trade = require('./Trade')
 
 
 
@@ -13,4 +14,11 @@ UserTrash.belongsTo(User)
 Trash.hasMany(UserTrash)
 UserTrash.belongsTo(Trash)
 
-module.exports = {User, Trash, UserTrash}
+Trade.belongsTo(UserTrash, {as: "getting"})
+Trade.belongsTo(UserTrash, {as: "giving"})
+Trade.belongsTo(User, {as: "getter"})
+User.hasMany(Trade, {foreignKey: "getterId"})
+Trade.belongsTo(User, {as: "giver"})
+User.hasMany(Trade, {foreignKey: "giverId"})
+
+module.exports = {User, Trash, UserTrash, Trade}
