@@ -7,7 +7,7 @@ $('.sidenav-trigger').on('click', () => {
 $(window).on('click', (e) => {
     let ignore = document.querySelector('.sn')
     if (e.target == ignore.firstChild || e.target == document.querySelector('i')) {
-        console.log(e.target)
+        return;
     } else {
         document.querySelector('.sidenav-overlay').click();
         $('.login-signup').children().show();
@@ -69,5 +69,54 @@ const signupFormHandler = async(event) => {
     }
 };
 
+//Declare elements as variables to separate login from signup event listeners
+let signInput = $('.signup-input');
+let loginInput = $('.login-input');
+let selectedSignup = false;
+let selectedLogin = false;
+
+// If signup inputs aren't empty, listen for enter key to submit form
+function signupCheck() {
+    if (signInput) {
+        selectedSignup = true
+    } else {
+        selectedSignup = false
+    }
+
+    if (selectedSignup) {
+        $(signInput).on('keypress', (e) => {
+            if (e.key == 'Enter') {
+                $('#signupBtn').trigger('click')
+                signInput.val() = ''
+            }
+        })
+    }
+}
+
+// If login inputs aren't empty, listen for enter key to submit form
+function loginCheck() {
+    if (loginInput) {
+        selectedLogin = true
+    } else {
+        selectedLogin = false
+    }
+
+    if (selectedLogin) {
+        $(loginInput).on('keypress', (e) => {
+            if (e.key == 'Enter') {
+                $('#loginBtn').trigger('click')
+                $('#loginForm').trigger('reset')
+            }
+        })
+    }
+}
+
+
+
+
+
 $('#signupBtn').on('click', signupFormHandler);
+signInput.on('keyup', signupCheck);
+
 $('#loginBtn').on('click', loginFormHandler);
+loginInput.on('keyup', loginCheck);
