@@ -558,6 +558,16 @@ section hr {
 /* =========== END =========== NEWPACK =========== */
 
 
+/* =========== START =========== USERWALL =========== */
+
+.userWall .trashCard {
+    min-width: 250px;
+}
+
+
+/* =========== END =========== USERWALL =========== */
+
+
 /* =========== START =========== TRASHCARDS =========== */
 
 .trashCard .card-title {
@@ -671,9 +681,10 @@ img[class*=" trashImage"] {
     .trashCard .card-image {
         height: 15em;
     }
-    .trashCard .cardText {
-        font-size: 2.5vw
-    }
+    /* ! Was causing spacing issues for the collections page. */
+    /* .trashCard .cardText {
+        font-size: 2.5vw 
+    } */
     .tossedBy {
         font-size: 1.5vw;
     }
