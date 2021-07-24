@@ -303,6 +303,11 @@ opacity: .5;
     margin: 1vh 0;
 }
 
+.wants span {
+    flex: 1 0 100%;
+    margin: 0;
+}
+
 .tradesDiv h4 {
     color: white;
     padding: 5px 10px;

@@ -1,6 +1,6 @@
 <div class="card tradeCard">
     <div class="trashCard center">
-        <span class="center trade-title"><a href="/user/{{getter.id}}">{{getter.username}}</a> Wants:</span>
+        <span class="center trade-title">Your:</span>
         <div class="card teal {{rarityCheck giving.trash.rarity}}">
             <div class="card-image">
                 <img class="trashImage{{giving.id}} materialboxed" src="{{stillGif giving.trash.image}}">
@@ -13,7 +13,7 @@
         </div>
     </div>
     <div class="trashCard center">
-        <span class="trade-title center">For Their:</span>
+        <span class="trade-title center">For <a href="/user/{{getter.id}}">{{getter.username}}</a>'s:</span>
         <div class="card teal {{rarityCheck getting.trash.rarity}}">
             <div class="card-image">
                 <img class="trashImage{{getting.id}} materialboxed" src="{{stillGif getting.trash.image}}">
