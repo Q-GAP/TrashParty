@@ -11,17 +11,17 @@
             <div class="card-reveal">
                 <span class="card-title grey-text text-darken-4">Login<i class="material-icons right">close</i></span>
                 <div class="row">
-                    <form class="col s12">
+                    <form id='loginForm'class="col s12">
 
                         <div class="row">
                             <div class="input-field col s10">
-                                <input placeholder="email@domain.com" id="emailLogin" type="email" class="validate">
+                                <input class='login-input' placeholder="email@domain.com" id="emailLogin" type="email" class="validate">
                                 <label for="emailLogin">Email</label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s10">
-                                <input placeholder="Password" id="passwordLogin" type="password" class="validate">
+                                <input class='login-input' placeholder="Password" id="passwordLogin" type="password" class="validate">
                                 <label for="passwordLogin">Password</label>
                             </div>
                         </div>
@@ -52,20 +52,20 @@
                         <div class="row">
                             <div class="input-field col s10">
 
-                                <input placeholder="JohnnyDOE" id="userNameSignUp" type="text">
+                                <input class='signup-input' placeholder="JohnnyDOE" id="userNameSignUp" type="text">
 
                                 <label for="userNameSignUp">Username</label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s10">
-                                <input placeholder="email@domain.com" id="emailSignUp" type="email" class="validate">
+                                <input class='signup-input' placeholder="email@domain.com" id="emailSignUp" type="email" class="validate">
                                 <label for="emailSignUp">Email</label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s10">
-                                <input placeholder='Password' id="passSignUp" type="password" class="validate">
+                                <input class='signup-input' placeholder='Password' id="passSignUp" type="password" class="validate">
                                 <label class="passLabel" for="passSignUp">Password</label>
                             </div>
                         </div>
@@ -82,5 +82,5 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
  <!-- jquery cdn -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-<script src="/js/index.js"></script>
+{{!-- <script src="/js/index.js"></script> --}}
 <script src="/js/login.js"></script>
