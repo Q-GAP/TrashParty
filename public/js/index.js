@@ -1,6 +1,21 @@
 console.log('index.js attached')
 M.AutoInit();
 
+$(function() {
+    $.ajax({
+        url: '/api/users',
+        method: 'GET',
+
+    }).then((response) => {
+        let userList = $('.userList');
+        response.map((user) => {
+            userList.append(`<a href='/user/${user.id}'><div class="userListCard card">${user.username}</div></a>`);
+
+        })
+        console.log('USERLIST', userList)
+    })
+})
+
 const logout = async() => {
     const response = await fetch('/api/users/logout', {
         method: 'POST',
@@ -31,6 +46,7 @@ $('#stopGIF').on('click', () => {
     $('#stopGIF').hide();
     $('#startGIF').show();
 })
+
 $('#startGIF').on('click', () => {
     $('.window').css('background-image', "url('https://bafybeiebr2pz4p3itoh7skbdjpzaifrqdujzl2bsibfsi5j3wsra7m7pfq.ipfs.dweb.link/')")
     $('#startGIF').hide();
@@ -38,3 +54,30 @@ $('#startGIF').on('click', () => {
 })
 
 $('.logout').on('click', logout);
+$('#openAside').on('click', () => {
+    // $('#closeAside').show();
+    $('#openAside').hide();
+    $('.window').children().hide();
+    $('aside').show();
+})
+
+$('#closeAside').on('click', () => {
+    $('aside').hide();
+    $('.window').children().show();
+    $('#openAside').show();
+})
+
+// $('aside').on('click', () => {
+//     $('aside').hide();
+//     $('#openAside').show();
+// })
+
+//SEARCH BAR
+$(function() {
+    $('#search').on("keyup", function() {
+        let value = $(this).val().toLowerCase();
+        $(".userList").children().children('.userListCard').filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+    });
+});
