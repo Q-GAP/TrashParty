@@ -536,6 +536,49 @@ a:not(.btn-floating):hover {
     margin-bottom: 0;
 }
 
+aside {
+    display: none;
+    background-color: #08292681;
+    width: 100%;
+    position: absolute;
+    bottom: 90px;
+    top: 64px;
+    right: .1px;
+    padding: 20px;
+    color: white !important;
+    z-index: 10;
+}
+
+aside ul {
+    display: flex !important;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    gap: 1vw 1vh;
+    z-index: 50;
+}
+
+#openAside {
+    position: absolute;
+    top: 50%;
+    right: 0;
+}
+
+#closeAside {
+    background-color: #c0d6dd56;
+    padding: 1vh;
+    cursor: pointer;
+}
+
+aside #search {
+    z-index: 100;
+}
+
+aside a {
+    flex: 0 0 20%;
+    text-align: center;
+    color: var(--tp_slate) !important;
+}
+
 
 /* =========== END =========== FOOTER =========== */
 
