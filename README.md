@@ -64,7 +64,7 @@
 
 ---
 
-  Post an issue on this repo https://github.com/Q-GAP/TrashParty. If it's urgent or there's money involved: [email us](mailto:trashparty@peterroto.com)
+  Post an issue on this repo https://github.com/Q-GAP/TrashParty. If it's urgent or there's money involved: [email us](mailto:support@trashparty.com)
   <br />
   <br />
   :octocat: Find our team on GitHub: <br />
